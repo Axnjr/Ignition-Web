@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Radha";
+  src: url(./4a1b9e81c4451a58-s.p.woff2);
+}
+
+body {
+  font-family: "Radha";
+  margin: 0%;
+  padding: 0%;
+  background-color: #0d0d0d;
+  color: aliceblue;
+}
