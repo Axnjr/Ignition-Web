@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Nav from "../../components/Nav"
 import Button from "../../components/Button"
 import Steps from "../../components/Steps"
@@ -14,7 +14,7 @@ export default function page() {
 			<main className=" flex 
 			flex-col items-start justify-center min-h-screen relative">
 				<div className="w-full pt-12 h-full flex flex-col items-center justify-center">
-					<p className="text-mybg my-6 
+					<p className="text-mybg my-8 
 					flex items-center rounded-3xl border border-mybg py-1 px-3 text-sm">
 						Robust, Performant & litrally real time powered by Rust.
 					</p>
@@ -24,6 +24,9 @@ export default function page() {
 						for your real time 
 						applications.
 					</h1>
+					<span className="text-lg w-1/2 text-center font-medium tracking-wide text-neutral-500 mt-8">
+							We handle all the complexity of the real time infrastructure, so that you get real time for real cheap & real quick!
+					</span>
 					<br />
 					<div className="flex items-center gap-0 mt-4">
 						<Button text="Start free" varient="filled" />
