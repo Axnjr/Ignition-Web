@@ -3,19 +3,39 @@ import Nav from "../../components/Nav"
 import Button from "../../components/Button"
 import Steps from "../../components/Steps"
 import Stacks from "../../components/Stacks"
+import UseCases from "../../components/UseCases";
+import Footer from "../../components/Footer";
+
+/**
+ * 
+ *  - Objectives
+ * 		- What is Ignition ?
+ * 		- Why Ignition ?
+ *  	- Where can you use Ignition ?
+ *  	- How to get started ?
+ * 		- Conclusion message
+ * 
+ * 	- Ignition pricing plans
+ * 		- Hobby      100k
+ * 		- Pro        1mil
+ * 		- Priority   4mil
+ * 		- Priority+  10mil
+ * 		- Enterprize Infinite
+ * 
+ */
 
 export default function page() {
 	// const { data: session, status } = useSession()
 	// const user  = session?.user?.name;
 	// const email = session?.user?.email
 	return (
-		<div className="bg-[#040404] text-white">
+		<div className="bg-[#090c0d] text-white">
 			<Nav />
 			<main className=" flex 
 			flex-col items-start justify-center min-h-screen relative">
 				<div className="w-full pt-12 h-full flex flex-col items-center justify-center">
-					<p className="text-mybg my-8 
-					flex items-center rounded-3xl border border-mybg py-1 px-3 text-sm">
+					<p className="text-mybg my-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl
+					flex items-center py-2 px-4 text-sm">
 						Robust, Performant & litrally real time powered by Rust.
 					</p>
 					{/* bg-clip-text text-transparent bg-gradient-to-tr from-gray-400 to-white */}
@@ -34,8 +54,10 @@ export default function page() {
 					</div>
 				</div>
 			</main>
+			<UseCases/>
 			<Stacks/>
 			<Steps/>
+			<Footer/>
 	  	</div>
 	)
 }
