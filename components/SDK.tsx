@@ -1,12 +1,23 @@
-// "use client"
-import { CopyBlock,  sunburst } from 'react-code-blocks';
+import { CopyBlock } from 'react-code-blocks';
+
+const codeTheme = {
+    backgroundColor: `#000`,
+    textColor: `#fff`,
+    substringColor: `#0d0d0d`,
+    keywordColor: `#6599FF`,
+    codeColor: `#f0f0f0`,
+    stringColor: `#FA91FC`,
+    commentColor: `#383c41`,
+    functionColor: `#a1feff`,
+    numberColor: `#ffffff`,
+}
 
 const pubSdkCodes = new Map([
 
-["javascript", 
-`import Ignition from "ignition-sdk";
+    ["javascript",
+        `import Ignition from "ignition-sdk";
 
-const publisher = new Ignition(apiKey: "2qw3e4r5t6y78u");
+const publisher = new Ignition("2qw3e4r5t6y78u");
  
 publisher.spark(
     "wsed5r6ftg7y8h", // group_id
@@ -17,8 +28,8 @@ publisher.spark(
     })
 );`],
 
-["python",
-`import ignition-sdk
+    ["python",
+        `import ignition-sdk
 
 publisher = Ignition(apiKey="2qw3e4r5t6y78u")
 
@@ -33,8 +44,8 @@ publisher.spark(
     mes # message
 )`],
 
-["go",
-`package main
+    ["go",
+        `package main
 
 import (
     "github.com/go-ignition-sdk"
@@ -58,13 +69,13 @@ func main() {
 }
 `],
 
-["java", 
-`
+    ["java",
+        `
 
 `],
 
-["bash",
-`curl -X POST 'https://api.ignition.dev/spark' 
+    ["bash",
+        `curl -X POST 'https://api.ignition.dev/spark' 
 -H 'Authorization: Bearer 2qw3e4r5t6y78u' 
 -H 'Content-Type: application/json' 
 -d $'{
@@ -73,8 +84,8 @@ func main() {
   "message": "Come over !"
 }'`],
 
-["rust", 
-`use ignition_sdk::Ignition;
+    ["rust",
+        `use ignition_sdk::Ignition;
 
 struct Message {
     mes: String,
@@ -100,10 +111,10 @@ fn main() {
 ]);
 
 const subSdkCodes = new Map([
-["javascript",
-`import Ignition from "ignition-sdk";
+    ["javascript",
+        `import Ignition from "ignition-sdk";
 
-const subscriber = new Ignition(apiKey: "2qw3e4r5t6y78u");
+const subscriber = new Ignition("2qw3e4r5t6y78u");
 
 subscriber.listen(group_id: "wsed5r6ftg7y8h")
 
@@ -114,8 +125,8 @@ subscriber.on("message", (data) => {
 
 });`],
 
-["python",
-`import ignition-sdk
+    ["python",
+        `import ignition-sdk
 
 subscriber = Ignition(apiKey="2qw3e4r5t6y78u")
 
@@ -124,8 +135,8 @@ subscriber.listen(group_id="wsed5r6ftg7y8h")
 subscriber.on("message", lambda data: print(data))
 `],
 
-["go",
-`package main
+    ["go",
+        `package main
 
 import (
     "fmt"
@@ -147,13 +158,13 @@ func main() {
     subscriber.On("message", handleMessage)
 }`],
 
-["java", 
-`
+    ["java",
+        `
 
 `],
 
-["bash",
-`# You can check for messages by making a get request
+    ["bash",
+        `# You can check for messages by making a get request
 # for reciving real time updates you will need to use
 # an SDK
 
@@ -161,8 +172,8 @@ curl -X GET 'https://api.ignition.dev/listen?apikey=
 2qw3e4r5t6y78u' 
 `],
 
-["rust",
-`use ignition_sdk::Ignition;
+    ["rust",
+        `use ignition_sdk::Ignition;
 
 struct Message {
     mes: String,
@@ -187,26 +198,31 @@ fn main() {
 
 ]);
 
-export default function SDK({ sdk } : { sdk : string }) {
+export default function SDK({ sdk }: { sdk: string }) {
     return (
-        <div className="w-11/12 h-fit rounded-2xl border border-myborder flex items-start px-2 py-0">
+        // shadow-[0px_0px_80px_1px_#FAEEFC]
+        <div className="w-11/12 h-fit mt-6 rounded-2xl bg-black border-2 border-neutral-700 backdrop-blur-sm flex items-start px-2 py-0">
 
-            <div className="w-1/2 h-full border-r border-myborder text-left rounded-2xl font-mono">
+            <div className="w-1/2 h-full border-r-2 border-neutral-800 text-left">
+                <div className='text-xl p-4 font-medium tracking-normal capitalize text-center w-full border-b border-neutral-800'>Publish events</div>
                 <CopyBlock
                     text={pubSdkCodes.get(sdk)!}
-                    theme={sunburst}
+                    // @ts-ignore
+                    theme={codeTheme}
                     language={sdk}
                     showLineNumbers={true}
                     wrapLongLines
                 />
             </div>
-            <div className="w-1/2 h-full text-left rounded-2xl font-mono">
+            <div className="w-1/2 h-full text-left rounded-2xl">
+                <div className='text-xl p-4 font-medium tracking-normal capitalize text-center w-full border-b border-neutral-800'>Subscribe to events</div>
                 <CopyBlock
                     text={subSdkCodes.get(sdk)!}
-                    theme={sunburst}
+                    // @ts-ignore
+                    theme={codeTheme}
                     language={sdk}
                     showLineNumbers={true}
-                    wrapLongLines
+                    wrapLongLines={true}
                 />
             </div>
 
