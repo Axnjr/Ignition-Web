@@ -17,9 +17,9 @@ module.exports = {
     },
     extend: {
       colors:{
-        'mybg':"#fff",
+        'mybg':"#FA91FC",
         'col':"black",
-        'myborder':'rgb(64 64 64)'
+        'myborder':'#3E3E3E'
       }
     },
   },
