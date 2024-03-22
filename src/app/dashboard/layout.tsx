@@ -8,8 +8,8 @@ export default function layout({ children }: { children: React.ReactNode }) {
             <header className='w-[80%] h-16 flex items-center fixed z-0 top-0 right-0 border-b border-neutral-300 
             px-10 dark:border-neutral-800 bg-white text-black dark:text-white dark:bg-black
              flex-row-reverse'>
-                <Button text='Feedback' varient="normal"/>
-                <Button text='Docs' varient="normal"/>
+                {/* <Button text='Feedback' varient="normal"/>
+                <Button text='Docs' varient="normal"/> */}
                 <Modes className="mx-4" />
             </header>
             <section className='min-h-screen fixed top-0 left-0 w-[20%] border-r border-neutral-300 z-10
