@@ -7,6 +7,11 @@
   src: url(./4a1b9e81c4451a58-s.p.woff2);
 }
 
+::selection{
+  background-color: #aa02d823;
+  color: #b402d8;
+}
+
 body {
   font-family: "Radha";
   margin: 0%;
