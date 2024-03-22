@@ -13,27 +13,29 @@ const plans = [
     ["Pro", 19],
     ["Priority", 49],
     ["Dedicated", 129],
-    ["Enterprise", 399]
+    ["Enterprise", 999]
 ]
 
 export default function UseCases() {
     return (
         <>
-            <div className="text-center mt-40 w-[60%] m-auto">
-                <h1 className="text-3xl mb-12 md:text-6xl tracking-tight font-medium">
+            <div className="text-center mt-40 w-[90%] md:w-[60%] m-auto">
+                <h1 className="text-[2.5rem] leading-[1] mb-0 md:mb-12 md:text-6xl tracking-tight font-medium">
                     The platform tailored for the <span className="text-mybg">realtime</span> revolution
                 </h1>
-                <p className="text-neutral-500 text-lg md:text-2xl mt-4 md:my-6">
-                    Make the next WhatsApp, discord, uber, github, facebook, everything somewhere relies on real time features.
+                <p className="text-neutral-500 text-xs md:text-2xl my-12 md:my-6">
+                    Make the next WhatsApp, discord, uber, github, everything somewhere relies on real time.
                 </p>
                 {/* <img className="w-screen opacity-40" src="https://upstash.com/globe.png" /> */}
             </div>
-            <section className='min-h-screen p-8 mt-6 grid gap-4 text-left md:grid-cols-5 md:gap-6'>
-                <div className="group/box-body relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-2 md:h-[60%]">
+            <section className='min-h-screen p-4 sm:p-8 mt-6 grid gap-0 text-left md:grid-cols-5 md:gap-6 place-content-center '>
+                <div className="group/box-body relative z-0 grid gap-6 p-6 scale-90 md:scale-100 md:gap-8 md:p-8 bg-mybg2 backdrop-blur 
+                rounded-3xl md:rounded-4xl md:col-span-2 md:h-[60%] hover:border border-fuchsia-200 md:hover:scale-[1.01]
+                ">
                     <header>
                         <h4 className="flex items-center gap-2 font-display text-xl font-semibold md:text-2xl">
                             Mean latency
-                            <span className="inline-flex translate-y-1/4 text-emerald-400 opacity-0 transition group-hover/box-body:translate-y-0 group-hover/box-body:opacity-100">
+                            <span className="inline-flex translate-y-1/4 opacity-0 transition group-hover/box-body:translate-y-0 group-hover/box-body:opacity-100">
                                 <a target="_blank" className="group/link-new inline-flex cursor-pointer items-center transition gap-0.5 hover:text-emerald-400 hover:underline" href="https://latency.upstash.io">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-mybg h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
                                 </a>
@@ -49,28 +51,30 @@ export default function UseCases() {
                     </header>
                 </div>
 
-                <div className="group/box-body relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-3">
+                <div className="group/box-body relative z-0 grid gap-6 scale-90 md:scale-100 p-6 md:gap-8 md:p-8 bg-mybg2 backdrop-blur 
+                rounded-3xl md:rounded-4xl md:col-span-3 hover:border border-fuchsia-200 md:hover:scale-[1.01]">
                     <header>
                         <h4 className="flex items-center gap-2 font-display text-xl font-semibold md:text-2xl">
                             Powered by
-                            <span className="inline-flex translate-y-1/4 text-emerald-400 opacity-0 transition group-hover/box-body:translate-y-0 group-hover/box-body:opacity-100">
+                            <span className="inline-flex translate-y-1/4 opacity-0 transition group-hover/box-body:translate-y-0 group-hover/box-body:opacity-100">
                                 <a target="_blank" className="group/link-new inline-flex cursor-pointer items-center transition gap-0.5 hover:text-emerald-400 hover:underline" href="https://latency.upstash.io">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} className="w-6 stroke-mybg fill-mybg h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>
                                 </a>
                             </span>
                         </h4>
-                        <h1 className="text-6xl whitespace-nowrap font-semibold text-mybg my-8">
+                        <h1 className="text-[3.5rem] leading-[1] sm:text-6xl whitespace-nowrap font-semibold text-mybg my-8">
                             Rust, <br />
                             Kafka <br />
                             WebSockets
                         </h1>
-                        <p className="mt-2 opacity-40 md:mt-3">
+                        <p className="mt-2 opacity-40 md:mt-3 leading-[1.3]">
                             Benefit from performance optimizations and best practices implemented in Rust, ensuring efficient resource utilization and optimal responsiveness under heavy load.
                         </p>
                     </header>
                 </div>
 
-                <div className="group/box-body  md:-mt-[32%] relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl overflow-hidden md:col-span-2">
+                <div className="group/box-body  md:-mt-[32%] relative z-0 scale-90 md:scale-100 grid gap-6 p-6 md:gap-8 md:p-8 bg-mybg2
+                backdrop-blur rounded-3xl md:rounded-4xl overflow-hidden md:col-span-2 hover:border border-fuchsia-200 md:hover:scale-[1.01]">
                     <header className="relative z-20">
                         <h4 className="flex items-center gap-2 font-display text-xl font-semibold md:text-2xl">
                             Where can you use Ignition
@@ -96,27 +100,27 @@ export default function UseCases() {
 
                 </div>
 
-                <div className="group/box-body relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl overflow-hidden md:col-span-3">
+                <div className="group/box-body relative z-0 grid gap-6 scale-90 md:scale-100 p-6 md:gap-8 md:p-8 bg-mybg2 backdrop-blur 
+                rounded-3xl md:rounded-4xl overflow-hidden md:col-span-3 hover:border border-fuchsia-200 md:hover:scale-[1.01]">
                     <header>
                         <h4 className="flex items-center gap-2 font-display text-xl font-semibold md:text-2xl">
                             Flexible Pricing
                             <span className="inline-flex translate-y-1/4 text-emerald-400 opacity-0 transition group-hover/box-body:translate-y-0 group-hover/box-body:opacity-100">
-                                <a target="_blank" className="group/link-new inline-flex cursor-pointer items-center transition gap-0.5 hover:text-emerald-400 hover:underline" href="https://latency.upstash.io">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-mybg h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                                <a target="_blank" className="group/link-new inline-flex cursor-pointer items-center transition gap-0.5 hover:text-mybg hover:underline" href="https://latency.upstash.io">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className="w-6 h-6 stroke-mybg"><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
                                 </a>
                             </span>
                         </h4>
-                        <p className="mt-6 opacity-40 md:mt-8 text-xl">
+                        <p className="mt-6 opacity-40 md:mt-8 leading-[1.3] sm:text-xl">
                             We got plans to suit all your needs, use Ignition for free with our Free Forever plan,
                             upgrade according to your requirements, downgrade or cancel anytime.
                         </p>
-                        <section className="flex flex-wrap items-center justify-center gap-4 mt-8">
+                        <section className="flex flex-wrap items-center md:justify-center gap-4 mt-8">
                             {
-                                plans.map((plan, id) => <button key={id} className="group/but1 flex flex-col items-start gap-2 rounded-xl
-                            py-4 px-6 text-left bg-black">
-                                    <span className="text-md font-medium">{plan[0]}</span>
-                                    {/* <br/> */}
-                                    <span className="text-2xl font-medium text-mybg">{plan[1]}$</span>
+                                plans.map((plan, id) => <button key={id} className="group flex flex-col items-start gap-2 rounded-xl
+                            py-4 px-6 text-left bg-black hover:bg-mybg hover:text-black">
+                                    <span className="text-lg sm:text-md font-medium">{plan[0]}</span>
+                                    <span className="text-2xl font-medium text-mybg group-hover:text-black">{plan[1]}$</span>
                                 </button>)
                             }
                         </section>

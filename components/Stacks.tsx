@@ -21,15 +21,15 @@ export default function Stacks() {
 
     return (
         <div className="min-h-screen mt-32 w-full m-auto flex flex-col items-center gap-14 p-8 text-center pb-32">
-            <div className="flex flex-col items-center justify-center w-2/3">
-                <h1 className="text-5xl tracking-tight font-medium">
+            <div className="flex flex-col items-center justify-center w-full md:w-2/3">
+                <h1 className="text-[2.5rem] md:text-6xl leading-[1] tracking-tight font-medium">
                     Seemlessly <span className="text-mybg">Integrate</span> with your project in each stack
                 </h1>
-                <p className="my-8 text-lg text-neutral-500">
+                <p className="my-8 text-xs sm:text-lg text-neutral-500">
                     A simple, elegant interface so you can start publishing & reciving messages in minutes.
                     It fits right into your code with SDKs for your favorite programming languages.
                 </p>
-                <div className="flex items-center gap-8 p-4 rounded-2xl">
+                <div className="w-full flex overflow-x-scroll sm:overflow-hidden items-center gap-0 sm:gap-5 p-4 rounded-2xl">
                     {
                         sdks.map((sdk, id) => <Button key={id} text={sdk} varient={sdkState == sdks[id] ? "filled" : "outline"} 
                             onClick={() => changeSdk(sdks[id])} 

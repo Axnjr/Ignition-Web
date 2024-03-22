@@ -1,36 +1,33 @@
+import Link from "next/link";
 import Button from "./Button";
 
 
 export default function Steps() {
     return (
-        <div className="min-h-screen w-full flex flex-col items-center justify-center mt-32 p-12 gap-16 ">
-            <div className="-mt-12 w-[60%] m-auto text-center">
-                <h1 className="text-5xl tracking-tight text-center font-medium">
+        <div className="min-h-screen w-full flex flex-col items-center justify-center mt-32 p-4 md:p-12 gap-16">
+            <div className="-mt-12 w-full sm:w-8/12 grid">
+                <h1 className="text-4xl md:text-6xl leading-[1] tracking-tight font-medium">
                     Add real time functionalities
                     to your projects in just three steps.
                 </h1>
-                <Button className="mt-8 -ml-2" varient="filled" text="Try free Forever Plan"/>
-                <Button varient="outline" text="Read Docs"/>
+                <div className="mt-12 flex items-center">
+                    <Button className="" varient="filled" text="Get Started"/>
+                    <Button className="" varient="outline" text="Read Docs"/>
+                </div>
             </div>
 
-            <ul className="space-y-4 md:space-y-8 mt-6 w-11/12 m-auto">
-                <li className="relative ml-6 bg-white/5 rounded-2xl py-6 px-10 backdrop-blur-xl">
-                    <p className="text-3xl tracking-tight font-medium my-3 text-mybg ">Create your free account</p>
-                    <p className="relative mt-2 text-p4 text-neutral-500 lg:text-p3">
-                        Have your developer install the SDK into your existing mobile, web, IoT, or server application.
-                    </p>
+            <ul className="w-full md:w-8/12">
+                <li className="text-xs md:text-2xl text-neutral-400 border-t-2 py-4 border-neutral-700">
+                    Create your Ignition Account by <Link href="/signup" className="underline text-mybg">Signing up</Link>.
                 </li>
-                <li className="relative ml-6 bg-white/5 rounded-2xl py-6 px-10 backdrop-blur-xl">
-                    <p className="text-3xl tracking-tight font-medium my-3 text-mybg ">Install the Ignition SDK</p>
-                    <p className="relative mt-2 text-p4 text-neutral-500 lg:text-p3">
-                        Have your developer install the SDK into your existing mobile, web, IoT, or server application.
-                    </p>
+                <li className="text-xs md:text-2xl text-neutral-400 border-t-2 py-4 border-neutral-700">
+                    Install the our SDK in the language of your choice.  
                 </li>
-                <li className="relative ml-6 bg-white/5 rounded-2xl py-6 px-10 backdrop-blur-xl">
-                    <p className="text-3xl tracking-tight font-medium my-3 text-mybg ">Publish & subscribe events</p>
-                    <p className="relative mt-2 text-p4 text-neutral-500 lg:text-p3">
-                        Have your developer install the SDK into your existing mobile, web, IoT, or server application.
-                    </p>
+                <li className="text-xs md:text-2xl text-neutral-400 border-t-2 py-4 border-neutral-700">
+                    Pass your project's API key to the SDK & start coding.
+                </li>
+                <li className="text-xs md:text-2xl text-neutral-400 border-t-2 py-4 border-neutral-700">
+                    Stuck? refer <a className="underline text-mybg">Examples</a> or ask for <a className="underline text-mybg">help</a>.
                 </li>
             </ul>
         </div>
