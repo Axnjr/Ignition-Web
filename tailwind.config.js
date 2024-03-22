@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       colors:{
         'mybg':"#FA91FC",
+        'mybg2':"#111111",
         'col':"black",
         'myborder':'#3E3E3E'
       }
