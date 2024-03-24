@@ -4,9 +4,19 @@ import Button from "./Button";
 
 
 export default function Menu() {
+
+    function closeMenu() {
+        if(document){
+            const menu = document.getElementById("menu");
+            if(menu){
+                menu.style.transform = "translateY(-100vh)";
+            }
+        }
+    }
+
     return (
-        <div className="w-full h-screen flex flex-col items-center justify-center gap-5 bg-black z-50 text-center 
-        text-white fixed top-0 m-auto">
+        <div id="menu" className="w-full h-screen flex flex-col items-center justify-center gap-5 bg-black z-50 text-center 
+        text-white">
             <h1 className="text-4xl font-medium tracking-tight my-4">
                 Ignition
             </h1>
@@ -20,7 +30,7 @@ export default function Menu() {
                 <a><h1 className="border-y border-neutral-700 p-2">Pricing</h1></a>
                 <a><h1 className="border-y border-neutral-700 p-2">Join Us</h1></a>
             </div>
-            <svg className="w-16 h-16 m-4 rounded-full border border-neutral-700 p-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <svg onClick={closeMenu} className="w-16 h-16 m-4 rounded-full border border-neutral-700 p-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </div>

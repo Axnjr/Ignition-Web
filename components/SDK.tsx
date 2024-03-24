@@ -202,7 +202,7 @@ fn main() {
 export default function SDK({ sdk }: { sdk: string }) {
     return (
         // shadow-[0px_0px_80px_1px_#FAEEFC]
-        <div className="w-full md:w-11/12 h-fit shadow-[0_20px_50px_rgba(250,_145,_252,_0.7)] mt-6 
+        <div className="w-full md:w-11/12 h-fit shadow-[0_20px_50px] shadow-mybg mt-6 
         rounded-2xl bg-black border-2 border-neutral-700 backdrop-blur-sm flex flex-col md:flex-row
         items-start px-2 py-0">
 
