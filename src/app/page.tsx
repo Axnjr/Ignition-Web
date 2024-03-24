@@ -32,7 +32,7 @@ export default function Home() {
 	return (
 		<div className="bg-[#000000] text-white">
 			<Nav />
-			{/* <Menu/> */}
+			<Menu/>
 			<main className=" flex 
 			flex-col items-start justify-center min-h-screen relative">
 				<div className="-mt-24 min-[1024px]:w-3/4 min-[1024px]:m-auto min-[1024px]:pt-12 h-full flex flex-col items-center justify-center">
@@ -61,7 +61,7 @@ export default function Home() {
 			<UseCases/>
 			<Stacks/>
 			<Steps/>
-			{/* <Footer/> */}
+			<Footer/>
 	  	</div>
 	)
 }

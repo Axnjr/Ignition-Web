@@ -18,6 +18,14 @@ body {
   padding: 0%;
 }
 
+#menu{
+  position: fixed;
+  top: 0;
+  margin: auto;
+  transition: all 0.1ms ease-in;
+  transform: translateY(-100vh);
+}
+
 .button_slide {
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #D80286;
