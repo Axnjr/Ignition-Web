@@ -20,43 +20,57 @@ export const authOptions: NextAuthOptions = {
 	  })
     ],
 	// copied as it is from next-auth docs
-	callbacks: {
+	// callbacks: {
 
-		async session({ token, session }) {
-			if (token) {
-				// @ts-ignore
-				session.user!.id = token.id
-				session.user!.name = token.name
-				session.user!.email = token.email
-				session.user!.image = token.picture
-			}
-			return session
-		},
+	// 	async session({ token, session }) {
+	// 		// console.log("Token:",token)
+	// 		// console.log("Session:", session)
+	// 		if (token) {
+	// 			// @ts-ignore
+	// 			session.user!.id = token.id
+	// 			session.user!.name = token.name
+	// 			session.user!.email = token.email
+	// 			session.user!.image = token.picture
+	// 			// @ts-ignore
+	// 			session.user!.key = "abc123"
+	// 		}
+	// 		return {
+	// 			...session,
+	// 			key: token.key
+	// 		}
+	// 	},
 
-		async jwt({ token, user }) {
-			const dbUser = await prismaDB.user.findFirst({
-				where: {
-				email: token.email,
-				},
-			})
+	// 	async jwt({ token, user }) {
+	// 		// const dbUser = await prismaDB.user.findFirst({
+	// 		// 	where: {
+	// 		// 		email: token.email,
+	// 		// 	},
+	// 		// })
 	
-			if (!dbUser) {
-				token.id = user!.id
-				return token
-			}
+	// 		// if (!dbUser) {
+	// 		// 	token.id = user!.id
+	// 		// 	return token
+	// 		// }
 	
-			return {
-				id: dbUser!.id,
-				name: dbUser!.name,
-				email: dbUser!.email,
-				picture: dbUser!.image,
-			}
-		},
+	// 		// return {
+	// 		// 	id: dbUser!.id,
+	// 		// 	name: dbUser!.name,
+	// 		// 	email: dbUser!.email,
+	// 		// 	picture: dbUser!.image,
+	// 		// 	key: dbUser!.apiKey,
+	// 		// }
+	// 		return {
+	// 			id: "q2w3e4r5t6",
+	// 			name: "Yakshit",
+	// 			email: "XXXXXXXXXXXXXXXXX",
+	// 			picture: "XXXXXXXXXXXXXXXXX"
+	// 		}
+	// 	},
 
-		redirect() {
-		  return '/'
-		},
-	},
+	// 	redirect() {
+	// 	  return '/'
+	// 	},
+	// },
 }
 
 export const getAuthSession = () => getServerSession(authOptions) // to get data all around the app .
