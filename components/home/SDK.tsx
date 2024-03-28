@@ -12,27 +12,27 @@ export default function SDK({ sdk }: { sdk: string }) {
             <div className="w-full md:w-1/2 h-full sm:border-r-2 border-neutral-800 text-left">
                 <div className='text-xl p-4 font-medium tracking-normal capitalize text-center w-full border-b border-neutral-800'>Publish events</div>
                 <div className='text-xs md:text-base py-4 md:pt-0'>
-                    <CopyBlock
+                    {/* <CopyBlock
                         text={pubSdkCodes.get(sdk)!}
                         wrapLongLines
                         language={sdk}
                         showLineNumbers={isMobile ? false : true}
                         // @ts-ignore
                         theme={codeTheme}
-                    />
+                    /> */}
                 </div>
             </div>
             <div className="w-full md:w-1/2 h-full text-left rounded-2xl">
                 <div className='text-xl p-4 font-medium tracking-normal capitalize text-center w-full border-y border-neutral-800'>Subscribe to events</div>
                 <div className='text-xs md:text-base pt-4 md:pt-0'>
-                    <CopyBlock
+                    {/* <CopyBlock
                         text={subSdkCodes.get(sdk)!}
                         wrapLongLines
                         language={sdk}
                         showLineNumbers={isMobile ? false : true}
                         // @ts-ignore
                         theme={codeTheme}
-                    />
+                    /> */}
                 </div>
             </div>
 

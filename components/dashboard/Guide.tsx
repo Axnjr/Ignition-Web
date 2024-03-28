@@ -1,8 +1,8 @@
 "use client";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/Tabs'
-import { pubSdkCodes, subSdkCodes } from '../codes'
+import { pubSdkCodes, subSdkCodes } from '../home/codes'
 import { useState } from 'react'
-import Button from '../Button';
+import Button from '../home/Button';
 
 function getTokenStyle(token: string) {
     switch (token) {
