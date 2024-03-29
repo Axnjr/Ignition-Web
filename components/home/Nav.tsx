@@ -37,12 +37,12 @@ export default function Nav() {
             <div className="flex items-center gap-2">
                 {
                     status == "authenticated" ? <>
-                        <Button className="hidden min-[960px]:block" onClick={() => signOut()} text="Sign Out" varient="outline"/>
+                        <Button className="hidden min-[960px]:block" onClick={() => signOut({callbackUrl:"/"})} text="Sign Out" varient="outline"/>
                         <Link href="/overview"><Button className="hidden min-[960px]:block whitespace-nowrap" text="Dashboard" varient="filled"/></Link>
                     </>
                         :
                     <>
-                        <Button className="hidden min-[960px]:block" onClick={() => signIn()} text="Login" varient="outline"/>
+                        <Button className="hidden min-[960px]:block" onClick={() => {alert(0);signIn()}} text="Login" varient="outline"/>
                         <Link href="/signup"><Button className="hidden min-[960px]:block whitespace-nowrap" text="Get Started" varient="filled"/></Link>
                     </>
                 }

@@ -1,11 +1,12 @@
-"use client";
+// "use client";
 import Link from 'next/link'
 import Profile from './Profile'
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
+import getSession from '@/lib/getSession'; 
 
-export default function Sidebar() {
+export default async function Sidebar() {
 
-    const { data, status } = useSession();
+    const data = await getSession();
 
     return (
         <section className='min-h-screen fixed top-0 left-0 w-1/5 border-r border-neutral-300 z-10 
