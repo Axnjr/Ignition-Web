@@ -1,15 +1,8 @@
-"use client"; 
-// import { Suspense } from 'react';
-import Modes from '../../../components/Modes';
-import Button from '../../../components/Button';
 import Sidebar from '../../../components/dashboard/Sidebar';
-import Profile from '../../../components/dashboard/Profile';
-import { useSession } from 'next-auth/react';
+import Button from '../../../components/home/Button';
+import Modes from '../../../components/home/Modes';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-
-    const { data, status } = useSession();
-
     return (
         <>
             <header className='w-full h-20 flex items-center fixed z-0 top-0 right-0 border-b border-neutral-300 
@@ -22,7 +15,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
             </header>
             <Sidebar/>
-
             <main className='pt-16 pl-[20%]'>
                 {children}
             </main>

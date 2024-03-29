@@ -1,11 +1,11 @@
 "use client";
-import Nav from "../../components/Nav"
-import Button from "../../components/Button"
-import Steps from "../../components/Steps"
-import Stacks from "../../components/Stacks"
-import UseCases from "../../components/UseCases";
-import Footer from "../../components/Footer";
-import Menu from "../../components/Menu";
+import Nav from "../../components/home/Nav"
+import Button from "../../components/home/Button"
+import Steps from "../../components/home/Steps"
+import Stacks from "../../components/home/Stacks"
+import UseCases from "../../components/home/UseCases";
+import Footer from "../../components/home/Footer";
+import Menu from "../../components/home/Menu";
 
 /**
  * 

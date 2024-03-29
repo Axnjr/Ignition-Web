@@ -1,4 +1,4 @@
-import AllProvider from '@/providers/Auth-&-TRPCClient-Provider'
+import AllProvider from '@/providers/AuthProvider'
 import type { Metadata } from 'next'
 import "../assets/globals.css"
 
