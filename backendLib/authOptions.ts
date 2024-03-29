@@ -3,6 +3,8 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
+import { User } from '@prisma/client'
+import db from './db2'
 
 export const authOptions: NextAuthOptions = {
 	secret: process.env.NEXTAUTH_SECRET,
@@ -19,58 +21,43 @@ export const authOptions: NextAuthOptions = {
 		clientSecret: process.env.GITHUB_CLIENT_SECRET!,
 	  })
     ],
-	// copied as it is from next-auth docs
-	// callbacks: {
 
-	// 	async session({ token, session }) {
-	// 		// console.log("Token:",token)
-	// 		// console.log("Session:", session)
-	// 		if (token) {
-	// 			// @ts-ignore
-	// 			session.user!.id = token.id
-	// 			session.user!.name = token.name
-	// 			session.user!.email = token.email
-	// 			session.user!.image = token.picture
-	// 			// @ts-ignore
-	// 			session.user!.key = "abc123"
-	// 		}
-	// 		return {
-	// 			...session,
-	// 			key: token.key
-	// 		}
-	// 	},
+	callbacks:{
+		redirect() {
+			return "/overview"
+		},
 
-	// 	async jwt({ token, user }) {
-	// 		// const dbUser = await prismaDB.user.findFirst({
-	// 		// 	where: {
-	// 		// 		email: token.email,
-	// 		// 	},
-	// 		// })
-	
-	// 		// if (!dbUser) {
-	// 		// 	token.id = user!.id
-	// 		// 	return token
-	// 		// }
-	
-	// 		// return {
-	// 		// 	id: dbUser!.id,
-	// 		// 	name: dbUser!.name,
-	// 		// 	email: dbUser!.email,
-	// 		// 	picture: dbUser!.image,
-	// 		// 	key: dbUser!.apiKey,
-	// 		// }
-	// 		return {
-	// 			id: "q2w3e4r5t6",
-	// 			name: "Yakshit",
-	// 			email: "XXXXXXXXXXXXXXXXX",
-	// 			picture: "XXXXXXXXXXXXXXXXX"
-	// 		}
-	// 	},
+		async session({ session, token: user }) {
+			// session.user!.id = user.id
+			// session.user!.name = user.name
+			// session.user!.email = user.email
+			// session.user!.image = user.picture
+			return {...session, dbPayload: user};
+		},
 
-	// 	redirect() {
-	// 	  return '/'
-	// 	},
-	// },
+		async signIn(props) {
+			try {
+				const u = await db.query("SELECT * FROM userdetails WHERE email = $1 LIMIT 1", [props.user.email as string])
+
+				if(u.rows.length > 0){
+					return true;
+				}
+
+				else {
+					await db.query(`
+						INSERT INTO userdetails (plantype, apikey, expiryon, hits, email) 
+						VALUES ('Hobby', $1, NULL, 0, $2) ;
+					`,
+					[props.user.id as string, props.user.email as string])
+				}
+
+			} catch (error) {
+				console.log("ERROR AT `signIn` Callback : ", error)
+			}
+			return true;
+		}
+
+	}
 }
 
 export const getAuthSession = () => getServerSession(authOptions) // to get data all around the app .
