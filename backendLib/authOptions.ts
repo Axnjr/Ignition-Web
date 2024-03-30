@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
 			// session.user!.name = user.name
 			// session.user!.email = user.email
 			// session.user!.image = user.picture
-			return {...session, dbPayload: user};
+			return {...session, dbPayload: user, type: (user as User).planType};
 		},
 
 		async signIn(props) {
