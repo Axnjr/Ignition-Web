@@ -15,6 +15,7 @@ declare module "next-auth" {
             name:string
             picture:string
             sub:string
-        }
+        },
+        type: string
     }
 }
