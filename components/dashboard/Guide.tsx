@@ -3,6 +3,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/Tabs'
 import { pubSdkCodes, subSdkCodes } from '../home/codes'
 import { useState } from 'react'
 import Button from '../home/Button';
+import { Code } from '@geist-ui/react';
 
 function getTokenStyle(token: string) {
     switch (token) {
@@ -80,7 +81,7 @@ export default function Guide() {
                 {
                     sdks.map((lang,id) => { 
                         return <TabsContent key={id} className='font-mono font-thin' value={lang}>
-                            <pre className='bg-neutral-950 px-6 py-4 rounded-xl text-white'>
+                            <pre className=' px-6 py-4 rounded-xl border dark:border-neutral-800'>
                                 <code>{
                                 sdk == "pub" ? pubSdkCodes.get(lang)!.split(" ").map((word, i) => {
                                     return <span key={i} >{word} </span>
