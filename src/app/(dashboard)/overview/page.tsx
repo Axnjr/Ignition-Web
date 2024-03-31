@@ -1,30 +1,34 @@
-// "use client";
-// import APIKEY from "../../../../components/dashboard/APIKEY";
+import ApiKey from "../../../../components/dashboard/APIKEY";
 import Guide from "../../../../components/dashboard/Guide";
-// import { useSession } from "next-auth/react";
 import getSession from "@/lib/getSession";
 
 export default async function Overview() {
-
-	// const { data: session, status } = useSession();
 	const session = await getSession();
-
+	console.log(session?.type)
 	return (
 		<div className='px-6 py-10 bg-white text-black dark:bg-black dark:text-white w-full min-h-screen'>
-			<div className="flex items-center justify-between w-full p-2">
-				<div className='w-1/4'>
-					<h1 className="text-4xl mt-6 font-bold leading-[0]">Overview</h1> <br />
-					<span className="text-base">Total requests made: 0</span>
+			<div className="flex flex-col items-start justify-between w-full p-2">
+				<div className='w-1/4 my-3 pl-2'>
+					<span className="text-neutral-500 text-sm">Overview</span>
+					<h1 className="text-4xl mt-6 whitespace-nowrap tracking-tight font-semibold leading-[1] flex items-center">
+						{session?.user?.name}
+						<span className="text-sm py-1 px-2 tracking-normal text-neutral-500 border mt-1 mx-2 rounded-lg dark:border-neutral-800">
+							{session?.type ?? "Hobby "}
+								-
+							{
+								session?.type == "Hobby" || session?.type == undefined 
+									? 
+								<a className="text-blue-500"> Upgrade </a> 
+									: 
+								null
+							}
+						</span>
+					</h1> 
+					{/* <br /> */}
 				</div>
-				{/* <button className='bg-black text-white dark:bg-white dark:text-black font-medium py-2 px-4 rounded-lg'>
-					Create API KEY
-				</button> */}
-				{/* <APIKEY/> */}
-				<div className="w-10/12 rounded-xl border p-2 m-2">
-					{session?.dbPayload.sub as string}
-				</div>
+				<ApiKey/>
 			</div>
-			<div className="mt-10 border rounded-xl w-full p-4 h-fit py-6 dark:border-neutral-800">
+			<div className="mt-6 border rounded-xl w-full p-4 h-fit py-6 dark:border-neutral-800">
 				<h1 className="text-base m-2 pl-2 mb-6">Add to your project</h1>
 				<Guide />
 			</div>
