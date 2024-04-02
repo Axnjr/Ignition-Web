@@ -12,7 +12,7 @@ export default function Button({ text, varient, className, children, ...props }:
 
 	switch (varient) {
 		case "filled":
-			return <button className={clsx(`rounded-lg py-1 px-4 mx-2 dark:bg-mybg bg-black text-white dark:text-black`, className)} {...props}>{text}</button>
+			return <button className={clsx(`rounded-xl py-2 px-4 mx-2 bg-white text-black font-medium`, className)} {...props}>{text}</button>
 	
 		case "outline":
 			return <button className={clsx("rounded-xl py-2 px-4 mx-2 border border-neutral-700", className)} {...props}>{text}</button>
