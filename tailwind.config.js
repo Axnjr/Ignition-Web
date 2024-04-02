@@ -16,11 +16,20 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+        border: 'border 3s ease infinite',
+      },
+      keyframes: {
+        border: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
       colors:{
-        'mybg':"#fff",
+        'mybg':"#1000e9",
         'mybg2':"#111111",
         'col':"black",
-        'myborder':'#3E3E3E'
+        'myborder':'rgb(38, 38, 38)'
       }
     },
   },
