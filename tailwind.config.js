@@ -16,14 +16,35 @@ module.exports = {
       },
     },
     extend: {
-      animation: {
-        border: 'border 3s ease infinite',
+      "animation": {
+        "border-width": "border-width 10s infinite ease-in-out",
+        "text-gradient": "text-gradient 8s linear infinite",
+        "background-shine": "background-shine 3s linear infinite"
       },
-      keyframes: {
-        border: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+      "keyframes": {
+        "border-width": {
+          "from": {
+            "width": "10px",
+            "opacity": "0"
+          },
+          "to": {
+            "width": "150px",
+            "opacity": "1"
+          }
         },
+        "text-gradient": {
+          "to": {
+            "backgroundPosition": "200% center"
+          }
+        },
+        "background-shine": {
+          "from": {
+            "backgroundPosition": "0 0"
+          },
+          "to": {
+            "backgroundPosition": "-200% 0"
+          }
+        }
       },
       colors:{
         'mybg':"#1000e9",
