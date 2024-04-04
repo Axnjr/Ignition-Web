@@ -19,16 +19,7 @@ const plans = [
 export default function UseCases() {
     return (
         <>
-            <div className="text-center mt-40 w-[90%] md:w-[60%] m-auto">
-                <h1 className="text-[2.5rem] leading-[1] mb-0 md:mb-12 md:text-6xl tracking-tight font-medium">
-                    The platform tailored for the <span className="text-mybg">realtime</span> revolution
-                </h1>
-                <p className="text-neutral-500 text-xs md:text-2xl my-12 md:my-6">
-                    Make the next WhatsApp, discord, uber, github, everything somewhere relies on real time.
-                </p>
-                {/* <img className="w-screen opacity-40" src="https://upstash.com/globe.png" /> */}
-            </div>
-            <section className='min-h-screen p-4 sm:p-8 mt-6 grid gap-0 text-left md:grid-cols-5 md:gap-6 place-content-center '>
+            <section className='min-h-screen absolute p-4 sm:p-8 mt-6 grid gap-0 text-left md:grid-cols-5 md:gap-6 place-content-center '>
                 <div className="group/box-body relative z-0 grid gap-6 p-6 scale-90 md:scale-100 md:gap-8 md:p-8 bg-mybg2 backdrop-blur 
                 rounded-3xl md:rounded-4xl md:col-span-2 md:h-[60%] hover:border border-fuchsia-200 md:hover:scale-[1.01]
                 ">

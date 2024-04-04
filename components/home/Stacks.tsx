@@ -1,3 +1,4 @@
+"use client";
 import { Tabs, TabsTrigger, TabsContent, TabsList } from "../ui/Tabs";
 import SDK from "./SDK"
 import { useState } from 'react';
@@ -12,131 +13,120 @@ import {
 import { Button } from "../ui/Button";
 
 
-const sdks = [
-    "javascript",
-    "python",
-    "go",
-    "java",
-    "bash",
-    "rust",
+
+const groups = [
+    "Emails",
+    "Work Updates",
+    "Family Group",
+    "Gaming Clan",
+    "Social",
+    "Work",
+    "Personal",
+    "Financial",
+    "Education",
+    "Sports",
+    "Entertainment",
+    "Lifestyle",
+    "Billing Alert",
+    "Action Required",
+    "News",
+    "Weather",
+    "Server Events",
+    "System Errors"
 ]
 
-const play = [
+interface Play {
+    group: string,
+    message: string
+}
+
+const play: Play[] = [
     {
-        "group": "Emails Feed",
-        "message": "Sick bro !!"
+        group: "Emails Feed",
+        message: "Sick bro !!"
     },
     {
-        "group": "Work Updates",
-        "message": "All tasks completed ahead of schedule."
+        group: "Work Updates",
+        message: "All tasks completed ahead of schedule."
     },
     {
-        "group": "Family Group",
-        "message": "Don't forget grandma's birthday this Sunday!"
+        group: "Family Group",
+        message: "Don't forget grandma's birthday this Sunday!"
     },
     {
-        "group": "Gaming Clan",
-        "message": "Raid night moved to 8 PM. Be there or be square."
+        group: "Gaming Clan",
+        message: "Raid night moved to 8 PM. Be there or be square."
     },
     {
-        "group": "Neighborhood Watch",
-        "message": "Suspicious activity reported near the park. Stay alert."
+        group: "Neighborhood Watch",
+        message: "Suspicious activity reported near the park. Stay alert."
     },
     {
-        "group": "Fantasy Football",
-        "message": "Reminder: Draft day is this Saturday at noon. Don't be late."
+        group: "Fantasy Football",
+        message: "Reminder: Draft day is this Saturday at noon. Don't be late."
     },
-    {
-        "group": "Tech News Today",
-        "message": "Breaking: Major tech company announces groundbreaking new device."
-    },
-    {
-        "group": "Health & Wellness",
-        "message": "Tip of the day: Start your morning with a glass of lemon water to boost your metabolism."
-    },
-    {
-        "group": "Book Club",
-        "message": "Next meeting: Discussing 'The Great Gatsby' on April 15th. Happy reading!"
-    },
-    {
-        "group": "Culinary Corner",
-        "message": "Recipe of the week: Homemade sourdough bread. Yummy!"
-    }
 ]
 
 export default function Stacks() {
 
-    // const [sdkState, setSDK] = useState(sdks[0])
+    
 
-    // function changeSdk(newSdk: string) {
-    //     setSDK(newSdk);
-    // }
-
-    const [name, setName] = useState("Govind~");
-    const [status, setStatus] = useState("Spiritual");
+    const [playState, setPlayState] = useState<Play[]>(play)
+    const [groupState, setGroup] = useState("News");
     const [message, setMessage] = useState("Hello");
 
     return (
         <div className="h-fit py-32 bg-black">
-            {/* <div className="min-h-screen mb-16 w-11/12  m-auto relative h-full
-                gap-14 text-center bg-gray-950 overflow-hidden rounded-xl border border-gray-800 p-[1px] backdrop-blur-3xl">
-                {/* <div className='left-0 h-[1px] animate-border-width rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all duration-1000' /> 
-                <span className='absolute inset-[-100%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ededed_0%,#0d0d0d_50%,#E2CBFF_100%)]' />
-                <div className="h-full w-full items-center justify-center rounded-xl bg-black px-3 py-1 text-sm font-medium
-                text-gray-50 backdrop-blur-3xl relative">
-                    <div className="h-14 w-full border-b border-neutral-800 flex items-center justify-between pr-2">
-                        <h1 className="text-base text-neutral-50 tracking-tight font-medium text-left">
-                            <span className="text-green-500">●</span> &nbsp; Live Users - 893
-                        </h1>
-                    </div>
-                </div>
-            </div> */}
-            <Tabs className="w-full h-screen relative text-center" defaultValue="preview">
+            <Tabs className="w-full h-fit relative text-center" defaultValue="preview">
                 <TabsList className="mt-1 rounded-lg inline-block bg-neutral-900 relative" defaultValue="preview">
                     <div className='absolute top-0 flex w-full justify-center'>
-                        <div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all w-[150px]' />
+                        <div className='left-0 h-[2px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all w-[150px]' />
                     </div>
-                    <TabsTrigger className="text-base" value="preview">Ignition in action</TabsTrigger>
-                    <TabsTrigger className="text-base" value="code">Code</TabsTrigger>
+                    <TabsTrigger className="text-base capitalize" value="preview">Ignition in action</TabsTrigger>
+                    <TabsTrigger className="text-base capitalize" value="code">Code</TabsTrigger>
                 </TabsList>
                 <TabsContent value="preview" className="w-full h-full p-6 bg-black relative">
-                    <section className="w-10/12 h-full m-auto">
+                    <section className="w-10/12 m-auto">
                         <div className="flex items-center w-full bg-gradient-to-b from-neutral-800 to-neutral-950 gap-2 border border-myborder rounded-xl justify-center px-2 py-3">
-                            <Select>
+                            <Select onValueChange={(item) => {
+                                setGroup(prev => item);
+                            }}>
                                 <SelectTrigger className="w-[15%] border border-myborder bg-black">
-                                    <SelectValue placeholder="Busy" />
+                                    <SelectValue placeholder="Groups" />
                                 </SelectTrigger>
                                 <SelectContent className="text-white border border-myborder z-50">
-                                    <SelectItem value="light">Busy</SelectItem>
-                                    <SelectItem value="dark">Sleeping</SelectItem>
-                                    <SelectItem value="system">Coding</SelectItem>
-                                    <SelectItem value="spiritual">Spiritual</SelectItem>
+                                    {
+                                        groups.map((item, index) => <SelectItem key={index} value={item}>{item}</SelectItem>)
+                                    }
                                 </SelectContent>
                             </Select>
-                            <input className="w-[75%] h-10 px-4 rounded-lg outline-none border border-myborder bg-black" placeholder="Type your message .." type="text" />
-                            <span className='inline-flex h-full animate-background-shine cursor-pointer items-center 
+                            <input onChange={(e) => setMessage(e.target.value)} className="w-[75%] h-10 px-4 rounded-lg outline-none border border-myborder bg-black" placeholder="Type your message .." type="text" />
+                            <span onClick={() => {
+                                setPlayState(prev => [{ group: groupState, message: message }, ...prev.slice(0, prev.length)])
+                            }}
+                                className='inline-flex h-full animate-background-shine cursor-pointer items-center 
                             justify-center rounded-xl border border-gray-800 bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] 
                             bg-[length:250%_100%] px-4 py-2 text-sm font-medium text-gray-300'>
                                 <RocketIcon className="mr-2" /> Send
                             </span>
                         </div>
-                        <div className="flex flex-col justify-start items-center py-2 border border-myborder rounded-xl
-                         overflow-y-hidden h-2/3 mt-2 bg-gradient-to-b from-neutral-900 to-neutral-950">
+                        <div className="flex flex-col justify-start items-center pt-2 border border-myborder rounded-xl
+                         overflow-y-hidden h-[60vh] mt-2 bg-gradient-to-b from-neutral-900 to-neutral-950 w-full relative shadow-2xl shadow-mybg">
                             {
-                                play.map((item, index) => <div className="text-base my-2 text-left font-medium text-neutral-600 
-                           w-full px-4 p-1 border-b border-myborder flex items-center justify-between" key={index}>
-                                    <div className="w-[20%]">
+                                playState.map((item, index) => <div className="text-base my-2 text-left font-medium text-neutral-600 
+                                    w-full px-4 p-1 border-b border-myborder flex items-center justify-between" key={index}>
+                                    <div className="w-[30%] lg:w-[20%]">
                                         <span className="p-1 bg-green-500/10 text-sm text-green-500 rounded-lg">
                                             Group
-                                        </span>&nbsp; {item.group.slice(0, 30)}
+                                        </span>&nbsp; {item.group.length > 12 ? item.group.slice(0, 12) + ".." : item.group}
                                     </div>
-                                    <div className="w-[60%] text-left flex items-center justify-start">
+                                    <div className="w-[70%] lg:w-[60%] text-left flex items-center justify-start">
                                         <span className="p-1 bg-blue-500/10 text-sm text-blue-500 rounded-lg">
                                             Message
                                         </span>
-                                        &nbsp; {item.message.slice(0, 100) + "..."}
+                                        &nbsp; {item.message.length > 60 ? item.message.slice(0, 60) + ".." : item.message}
                                     </div>
-                                    <div className="w-[20%] text-left flex items-center justify-start">
+                                    <div className="hidden lg:flex w-[20%] text-left items-center justify-start">
                                         <span className="p-1 bg-fuchsia-500/10 text-sm text-fuchsia-500 rounded-lg">
                                             Event
                                         </span>
@@ -144,6 +134,7 @@ export default function Stacks() {
                                     </div>
                                 </div>)
                             }
+                            <div className="w-full absolute bottom-0 h-10 bg-gradient-to-b from-neutral-950 via-black to-black blur"></div>
                         </div>
                     </section>
                 </TabsContent>
