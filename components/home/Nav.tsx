@@ -17,7 +17,7 @@ export default function Nav() {
 
     return (
         <nav className="w-full h-20 flex justify-between items-center px-8 fixed top-0 z-50
-        min-[1400px]:px-32 m-auto right-0 left-0 border-neutral-900 bg-black/20 backdrop-blur-sm">
+        min-[1400px]:px-32 m-auto right-0 left-0 backdrop-blur-xl">
                 <h1 className="text-3xl font-medium flex items-center mr-8 tracking-tight">
                     {/* <img src="/logo.png" className="w-8 h-8 mr-2" /> */}
                     Ignition

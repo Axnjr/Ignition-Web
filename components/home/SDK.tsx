@@ -2,8 +2,7 @@ import { codeTheme, pubSdkCodes, subSdkCodes } from './codes';
 
 export default function SDK({ sdk }: { sdk: string }) {
     return (
-        <div className="w-full md:w-11/12 h-fit shadow-[0_20px_50px] shadow-mybg mt-6 
-        rounded-2xl bg-black border-2 border-neutral-700 backdrop-blur-sm flex flex-col md:flex-row
+        <div className="w-full flex flex-col md:flex-row
         items-start px-2 py-0">
 
             <div className="w-full md:w-1/2 h-full sm:border-r-2 border-neutral-800 text-left">

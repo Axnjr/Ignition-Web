@@ -75,7 +75,7 @@ body {
   content: "";
   position: absolute;
   inset: 0px;
-  background: radial-gradient(circle at bottom center, #393BB2, transparent 80%);
+  background: radial-gradient(circle at bottom center, #2f2f31, transparent 80%);
   opacity: 0.4;
 }
 
