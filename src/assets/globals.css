@@ -9,7 +9,7 @@
 
 ::selection {
   background-color: #8800ff35;
-  color: #a600ff;
+  color: #120ef14c;
 }
 
 body {
@@ -62,7 +62,7 @@ body {
   }
 }
 
-.gssss {
+/* .gssss {
   --color: #393BB2 ;
   --color-bg-primary: #000212 ;
   margin: -128px auto; 
@@ -70,9 +70,9 @@ body {
   user-select: none;
   position: absolute;
   margin: 0px auto;
-  /* height: 500px; */
+  /* height: 500px;
   overflow: hidden;
-  /* mask-image: radial-gradient(circle, black, transparent 100%); */
+  /* mask-image: radial-gradient(circle, black, transparent 100%); 
 }
 
 .gssss::before {
@@ -94,4 +94,4 @@ body {
   border-radius: 50%;
   border-top: 1px solid #020347d7;
   top: 80%;
-}
+} */

@@ -3,42 +3,42 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 
 const sdksObj = [
-	{
-		lang: "JavaScript",
-		herf:"",
-		col:"bg-green-500",
-		desc: "A socket.io wrapper for connecting with Ignition servers."
-	},
-	{
-		lang: "React",
-		herf:"",
-		col:"bg-green-500",
-		desc: "useIgnition() hook to handle event emits and subscriptions with ease."
-	},
-	{
-		lang: "GoLang",
-		herf:"",
-		col:"bg-yellow-500",
-		desc: "A go-socket.io wrapper for connecting with Ignition servers in development"
-	},
-	{
-		lang: "Rust",
-		herf:"",
-		col:"bg-yellow-500",
-		desc: "A socketiooxide wrapper for connecting with Ignition servers in development"
-	},
-	{
-		lang: "Kotlin",
-		herf:"",
-		col:"bg-yellow-500",
-		desc: "A websockets client warpper for connecting with Ignition servers in development"
-	},
-	{
-		lang: "No SDK",
-		herf:"",
-		col:"bg-green-500",
-		desc: "If SDK of your language is not listed you check no-sdk examples here."
-	},
+    {
+        lang: "JavaScript",
+        herf: "",
+        col: "bg-green-500",
+        desc: "A socket.io wrapper for connecting with Ignition servers."
+    },
+    {
+        lang: "React",
+        herf: "",
+        col: "bg-green-500",
+        desc: "useIgnition() hook to handle event emits and subscriptions with ease."
+    },
+    {
+        lang: "GoLang",
+        herf: "",
+        col: "bg-yellow-400",
+        desc: "A go-socket.io wrapper for connecting with Ignition servers (in development)"
+    },
+    {
+        lang: "Rust",
+        herf: "",
+        col: "bg-yellow-400",
+        desc: "A socketiooxide wrapper for connecting with Ignition servers (in development)"
+    },
+    {
+        lang: "Kotlin",
+        herf: "",
+        col: "bg-yellow-400",
+        desc: "A websockets client warpper for connecting with Ignition servers (in development)"
+    },
+    {
+        lang: "No SDK",
+        herf: "",
+        col: "bg-green-500",
+        desc: "If SDK of your language is not listed you check no-sdk examples here."
+    },
 ]
 
 export default function Integrations() {
@@ -62,9 +62,15 @@ export default function Integrations() {
                                 <span className={clsx("inline-flex h-3 w-3 rounded-full", sdk.col)}></span>
                                 {sdk.lang}
                                 <span className="inline-flex translate-y-1/4 items-center opacity-0 transition group-hover/source-box:translate-y-0 group-hover/source-box:opacity-100 text-blue-400">
-                                    <svg xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="1em" height="1em" className="inline-flex shrink-0 text-2xl" role="icon">
-                                        <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
-                                    </svg>
+                                    {
+                                        sdk.col == "bg-yellow-400" 
+                                            ? 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-activity h-4 w-4 text-muted-foreground"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                                            :
+                                        <svg xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="1em" height="1em" className="inline-flex shrink-0 text-2xl" role="icon">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    }
                                 </span>
                             </div>
                             <p className="mt-1 grow opacity-40 tracking-normal font-medium">
