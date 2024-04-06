@@ -8,8 +8,8 @@
 }
 
 ::selection {
-  background-color: #006aff13;
-  color: #006eff;
+  background-color: #8800ff35;
+  color: #a600ff;
 }
 
 body {
@@ -20,6 +20,10 @@ body {
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: none;
   -webkit-text-size-adjust: none;
+}
+
+.conic_line{
+  background:conic-gradient(from 90deg at 50% 50%, #00000000 50%, #000 50%),radial-gradient(rgba(200,200,200,0.1) 0%, transparent 80%)
 }
 
 #menu {
@@ -75,7 +79,7 @@ body {
   content: "";
   position: absolute;
   inset: 0px;
-  background: radial-gradient(circle at bottom center, #2f2f31, transparent 80%);
+  background: radial-gradient(circle at bottom center, #2f1345, transparent 80%);
   opacity: 0.4;
 }
 
