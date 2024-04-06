@@ -2,6 +2,7 @@ export default function Compnies() {
     return (
         <div className="text-center mt-16 w-full relative">
             <div className="w-[95%] m-auto h-[2px] bg-gradient-to-r from-[#070713] from-15% via-mybg to-85% to-[#070713] mb-20"></div>
+            <div className="conic_line -top-1 left-1/2 h-[500px] w-full md:max-w-[800px] user-select-none center pointer-events-none absolute max-w-full -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
             <h1 className="text-2xl mt-32 mb-16  text-gray-50 font-normal">
                 Companies of all sizes need Real time somewhere
                 <br />

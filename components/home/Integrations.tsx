@@ -43,16 +43,12 @@ const sdksObj = [
 
 export default function Integrations() {
     return (
-        <LampContainer className="mt-20 bg-black text-center">
+        <LampContainer className="mt-20 text-center">
             <motion.div initial={{ opacity: 0.5, y: 400 }} whileInView={{ opacity: 1, y: 350 }}
-                transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }} className="w-full inline-block">
-
-                <h1 className="mt-28 text-white
-					text-4xl font-medium tracking-tight md:text-7xl w-[60%] text-center inline-block">
+                transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }} className=" w-full inline-block">
+                <h1 className="mt-28 text-white text-4xl font-medium tracking-tight md:text-7xl w-[60%] text-center inline-block">
                     Seemlessly Integrate with your project
                 </h1>
-
-
                 <div className="relative mt-10 mb-40 grid gap-4 text-left md:mt-20 md:grid-cols-3 md:gap-6">
                     {
                         sdksObj.map((sdk, id) => <a key={id} target="_blank" className="relative group/source-box flex flex-col rounded-2xl p-6 md:p-8 
@@ -76,6 +72,7 @@ export default function Integrations() {
                             </p>
                         </a>)
                     }
+                    <h5 className="text-center col-span-3 mt-24 underline text-white">⁕ More SDK Comming Soon ⁕</h5>
                 </div>
             </motion.div>
         </LampContainer>
