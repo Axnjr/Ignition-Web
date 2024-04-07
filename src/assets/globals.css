@@ -8,8 +8,14 @@
 }
 
 ::selection {
-  background-color: #006aff13;
-  color: #006eff;
+  background-color: #8800ff35;
+  color: #120ef14c;
+}
+
+::-webkit-scrollbar{
+  width: 2px;
+  height: 2px;
+  background-color: transparent;
 }
 
 body {
@@ -20,6 +26,10 @@ body {
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: none;
   -webkit-text-size-adjust: none;
+}
+
+.conic_line{
+  background:conic-gradient(from 90deg at 50% 50%, #00000000 50%, #000 50%),radial-gradient(rgba(200,200,200,0.1) 0%, transparent 80%)
 }
 
 #menu {
@@ -58,7 +68,7 @@ body {
   }
 }
 
-.gssss {
+/* .gssss {
   --color: #393BB2 ;
   --color-bg-primary: #000212 ;
   margin: -128px auto; 
@@ -66,16 +76,16 @@ body {
   user-select: none;
   position: absolute;
   margin: 0px auto;
-  /* height: 500px; */
+  /* height: 500px;
   overflow: hidden;
-  /* mask-image: radial-gradient(circle, black, transparent 100%); */
+  /* mask-image: radial-gradient(circle, black, transparent 100%); 
 }
 
 .gssss::before {
   content: "";
   position: absolute;
   inset: 0px;
-  background: radial-gradient(circle at bottom center, #393BB2, transparent 80%);
+  background: radial-gradient(circle at bottom center, #2f1345, transparent 80%);
   opacity: 0.4;
 }
 
@@ -90,4 +100,4 @@ body {
   border-radius: 50%;
   border-top: 1px solid #020347d7;
   top: 80%;
-}
+} */

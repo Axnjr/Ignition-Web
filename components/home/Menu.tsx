@@ -15,14 +15,14 @@ export default function Menu() {
     }
 
     return (
-        <div id="menu" className="w-full h-screen flex flex-col items-center justify-center gap-5 bg-black z-50 text-center 
-        text-white">
+        <div id="menu" className="w-full h-screen flex flex-col items-center justify-center gap-5 z-50 text-center 
+        text-white bg-[radial-gradient(circle_500px_at_50%_200px,#100ef14c,transparent)] bg-black">
             <h1 className="text-4xl font-medium tracking-tight my-4">
                 Ignition
             </h1>
             <Button className="w-10/12" onClick={() => signIn()} text="Login" varient="outline" />
-            <Link className="w-10/12" href="/signup">
-                <Button className="w-full mx-0" text="Get Started" varient="filled" />
+            <Link className="w-10/12 -ml-2" href="/signup">
+                <Button className="w-full mx-0 my-1" text="Get Started" varient="filled" />
             </Link>
             <div className="pt-2 text-xl cursor-pointer text-left w-10/12 block">
                 <a><h1 className="border-y border-neutral-700 p-2">Products</h1></a>
