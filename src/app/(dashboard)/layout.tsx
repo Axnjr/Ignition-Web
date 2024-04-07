@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             px-4 dark:border-neutral-800 bg-white text-black dark:text-white dark:bg-black
             justify-between flex-row-reverse'>
                 <div className='flex items-center gap-2'>
-                    <Button text='Docs' varient='plain' />
+                    <Button text='Docs' varient='normal' />
                     <Button text='Feedback' varient="normal" />
                     <Modes className="mx-4 text-black dark:text-white" />
                 </div>
