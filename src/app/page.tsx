@@ -25,7 +25,7 @@ export default function Home() {
 				bg-[radial-gradient(circle_500px_at_50%_200px,#100ef14c,transparent)]">
 					<div className="min-[1024px]:w-3/4 min-[1024px]:m-auto pt-12 h-full flex flex-col
 							items-center justify-center inset-0 w-full bg-transparent gap-2">
-						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3">
+						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3 z-0">
 							Litrally real time, powered by Rust
 						</div>
 						<h1 className="heroIn mt-4 text-[2.5rem] leading-[1] px-6 md:text-6xl min-[1024px]:text-7xl tracking-tight 
@@ -37,35 +37,35 @@ export default function Home() {
 							We handle all the complexity of the real time infrastructure, so that you get real time for real cheap & real quick!
 						</span>
 						<br />
-						<Button varient="filled" className="z-50" text="Start Free" />
+						<Button varient="filled" className="z-10" text="Start Free" />
 					</div>
 				</main>
 				<Compnies />
 				<Stacks />
 				<Savage />
 				<Integrations />
-				<Pricing />
+				{/* <Pricing /> */}
 				<div className="min-h-screen w-full grid place-content-center place-items-center gap-8
 				bg-[radial-gradient(circle_500px_at_50%_200px,#100ef14c,transparent)]">
-					<img className="w-24 h-24 border rounded-full p-1 border-gray-700" src="/ignition.png" />
-					<h1 className="text-7xl font-medium text-center whitespace-nowrap tracking-tight">Keep the data<br />
+					<h1 className="text-5xl px-5 sm:text-6xl lg:text-7xl font-medium text-center md:whitespace-nowrap tracking-tight">Keep the data<br />
 						{/* <span className="font-semibold text-mybg">fresh,</span>
 						<span className="font-semibold text-fuchia-500"> dynamic,</span>
 						<span className="font-semibold text-gren-500"> real time</span> */}
-						<span className=" text-transparent bg-clip-text bg-gradient-to-r from-mybg to-sky-500">fresh, dynamic, & real time.</span>
+						{/*   */}
+						<span className="text-transparent bg-clip-text bg-gradient-to-r from-mybg to-sky-500 whitespace-nowrap">fresh & dynamic</span>
 					</h1>
 					<div className="flex items-center mt-4">
 						<Button varient="filled" className="rounded-full" text="Start Free" />
 						<Button varient="outline" className="rounded-full" text="Contact Us" />
 					</div>
 				</div>
-				<footer className=" relative w-[98%] m-auto h-fit py-24 border-t border-neutral-700 px-12">
+				<footer className=" relative w-[98%] m-auto h-fit py-24 border-t border-neutral-700 sm:px-12">
 					<div className='absolute top-0 right-0 left-0 flex w-full justify-center'>
 						<div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(87,87,87,0)] via-mybg to-[rgba(17,17,17,0)] transition-all w-[300px]' />
 					</div>
 					<div className="flex flex-col items-center justify-center gap-5">
 						<div className="flex items-center text-4xl font-semibold tracking-tight">
-							<img className="w-9" src="/ignition.png"/> Ignition &nbsp; 
+							<img className="w-9 mr-1 rotate-45" src="/ignition.png"/> Ignition &nbsp; 
 						</div>
 						<Link href="/status"><h4 className="text-mybg hover:bg-mybg/20 p-2 rounded-xl">● All Systems Operational</h4></Link>
 						<div className="flex items-center gap-2">

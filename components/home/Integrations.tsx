@@ -46,14 +46,14 @@ export default function Integrations() {
         <LampContainer className="mt-20 text-center">
             <motion.div initial={{ opacity: 0.5, y: 400 }} whileInView={{ opacity: 1, y: 350 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }} className=" w-full inline-block">
-                <h1 className="mt-28 text-white text-4xl font-medium tracking-tight md:text-7xl w-[60%] text-center inline-block">
+                <h1 className="mt-28 text-white text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl sm:w-[60%] text-center inline-block">
                     Seemlessly Integrate with your project
                 </h1>
-                <div className="relative mt-10 mb-40 grid gap-4 text-left md:mt-20 md:grid-cols-3 md:gap-6">
+                <div className="relative mb-40 grid gap-4 text-left mt-20 grid-cols-2 lg:grid-cols-3 md:gap-6">
                     {
-                        sdksObj.map((sdk, id) => <a key={id} target="_blank" className="relative group/source-box flex flex-col rounded-2xl p-6 md:p-8 
-							border border-gray-800 bg-gradient-to-b from-neutral-950 to-black backdrop-blur transition 
-							hover:scale-[1.02] hover:bg-white/10" href={sdk.herf}>
+                        sdksObj.map((sdk, id) => <a key={id} target="_blank" className="relative group/source-box flex flex-col rounded-2xl 
+                            p-6 md:p-8 border border-gray-800 bg-gradient-to-b from-neutral-950 to-black backdrop-blur transition 
+							hover:scale-[1.02] hover:bg-white/10 col-span-2 lg:col-span-1 w-full" href={sdk.herf}>
                             <div className='absolute top-0 right-0 left-0 flex w-full justify-center'>
                                 <div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-mybg to-[rgba(17,17,17,0)] transition-all w-[300px]' />
                             </div>

@@ -3,7 +3,7 @@ export default function Compnies() {
         <div className="text-center w-full relative overflow-hidden">
             <div className="w-[95%] m-auto h-[2px] bg-gradient-to-r from-[#070713] from-15% via-mybg to-85% to-[#070713] mb-20"></div>
             <div className="conic_line -top-1 left-1/2 h-[500px] w-full md:max-w-[800px] user-select-none center pointer-events-none absolute max-w-full -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
-            <h1 className="text-xl sm:text-2xl mt-32 mb-16  text-gray-50 font-normal px-6">
+            <h1 className="text-xl sm:text-2xl mt-32 mb-16  text-gray-50 font-normal px-8">
                 Companies of all sizes need Real time somewhere.&nbsp;
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-b from-[#c7d2fe] to-mybg bg-clip-text text-xl text-transparent tracking-wide">

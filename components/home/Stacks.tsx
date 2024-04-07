@@ -30,7 +30,7 @@ export default function Stacks() {
                             <Select onValueChange={(item) => {
                                 setGroup(prev => item);
                             }}>
-                                <SelectTrigger className="hidden sm:block w-[15%] border border-myborder bg-black h-12">
+                                <SelectTrigger className="hidden sm:flex w-[15%] border border-myborder bg-black h-12">
                                     <SelectValue placeholder="Groups" />
                                 </SelectTrigger>
                                 <SelectContent className="text-white border border-myborder z-50">
@@ -50,7 +50,7 @@ export default function Stacks() {
                             </span>
                         </div>
                         <div className="flex flex-col justify-start items-center pt-2 border border-myborder rounded-xl w-full md:w-10/12
-                         overflow-y-hidden h-[60vh] mt-2 bg-gradient-to-b from-gray-950 to-black m-auto relative shadow-2xl shadow-mybg">
+                         overflow-y-hidden h-[55vh] sm:h-[60vh] mt-2 bg-gradient-to-b from-gray-950 to-black m-auto relative shadow-2xl shadow-mybg">
                             {
                                 playState.map((item, index) => <div className="text-base my-2 text-left font-medium text-neutral-600 
                                     w-full px-4 p-1 border-b border-myborder flex items-center justify-between" key={index}>
@@ -74,7 +74,7 @@ export default function Stacks() {
                                     </div>
                                 </div>)
                             }
-                            <div className="w-full absolute bottom-0 h-10 bg-gradient-to-b from-neutral-950 via-black to-black blur"></div>
+                            <div className="w-full absolute -bottom-2 h-10 bg-gradient-to-b from-neutral-950 to-black blur-lg"></div>
                         </div>
                     </section>
                 </div>
