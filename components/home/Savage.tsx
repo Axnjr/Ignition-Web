@@ -36,24 +36,24 @@ const use = [
 
 export default function Savage() {
     return (
-        <section className='min-h- px-20 pt-28 place-content-center grid grid-cols-3 gap-8 place-items-center relative'>
-            <h1 className="col-span-3 text-7xl text-center font-medium m-auto z-10 w-[60%] mb-32">
+        <section className='px-6 md:px-20 pt-28 place-content-center grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 lg:place-items-center relative'>
+            <h1 className="col-span-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-medium m-auto z-10 w-full lg:w-[60%] mb-32">
                 The Platform Tailored for the Realtime<span className="bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"> Revolution</span>
             </h1>
-            <div className="group/box-body relative col-span-1 rounded-lg text-left">
+            <div className="group/box-body relative col-span-3 lg:col-span-1 rounded-lg text-left">
                 <h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={5} /><span className="text-xl">MS</span></h1>
                 <h1 className="text-xl font-medium ">Mean latency</h1>
                 <h1 className="text-xl text-neutral-500">for users with dedicated plans</h1>
             </div>
-            <div className="group/box-body relative col-span-1 rounded-lg text-center">
-                <h1 className="text-9xl font-bold text-center bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={135} /><span className="text-xl">MS</span></h1>
-                <h1 className="text-xl font-medium text-center">Mean latency</h1>
+            <div className="group/box-body relative col-span-3 lg:col-span-1 rounded-lg text-left md:text-center">
+                <h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={135} /><span className="text-xl">MS</span></h1>
+                <h1 className="text-xl font-medium">Mean latency</h1>
                 <h1 className="text-xl text-neutral-500 ">for users with shared & hobby plans</h1>
             </div>
-            <div className="group/box-body relative col-span-1 rounded-lg text-right">
+            <div className="group/box-body relative col-span-3 lg:col-span-1 rounded-lg text-right">
                 <h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={99} /><span className="text-xl">.99%</span></h1>
                 <h1 className="text-xl font-medium text-right">Uptime</h1>
-                <h1 className="text-xl text-neutral-500 text-right">Robust infrastructure</h1>
+                <h1 className="text-xl text-neutral-500 text-right">Robust & scalable infrastructure</h1>
             </div>
             <p className="col-span-3 w-1/2 mt-40 mb-24 text-center text-3xl font-medium">
                 Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.
