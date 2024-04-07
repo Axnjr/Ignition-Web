@@ -16,7 +16,7 @@ export default function Counter({
     duration:0.5,
     // velocity:1
   });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   useEffect(() => {
     if (isInView) {
