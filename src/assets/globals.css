@@ -12,6 +12,12 @@
   color: #120ef14c;
 }
 
+::-webkit-scrollbar{
+  width: 2px;
+  height: 2px;
+  background-color: transparent;
+}
+
 body {
   font-family: "Radha";
   margin: 0%;
