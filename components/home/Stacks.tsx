@@ -4,46 +4,31 @@ import { RocketIcon } from "@radix-ui/react-icons";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/Select"
 import { play, groups } from "../constants";
 import { Ignition } from 'ignition-js-sdk';
-import { io } from "socket.io-client";
-import useSync from "../../backendLib/useIgnition";
 
 export default function Stacks() {
 
-    // const socket = io("http://localhost:4000")
     const wsClient = new Ignition("abc123", "ws://localhost:4000");
 
-    // wsClient.subscribe("abc123");
+    useEffect(() => {
+        wsClient.on("connect", () => {
+            console.log("connected")
+            wsClient.subscribe("ignition-site-room")
+        })
 
-    // useEffect(() => {
-    //     wsClient.on("sync", (data) => {
-    //         console.log(data)
-    //     })
-    // }, [])
+        wsClient.on("new public message", async (data) => {
+            try {
+                setPlayState(prev => [...[JSON.parse(data)], ...prev.slice(0, prev.length)])
+            } catch (error) {
+                console.log(error)
+            }
+            console.log("New public message: ",JSON.parse(data))
+        })
 
-    // useEffect(() => {
-
-    //         wsClient.on("connect", () => {
-    //             console.log("connected")
-    //             wsClient.subscribe("ignition-site-room")
-    //         })
-
-    //         wsClient.on("new public message", async (data) => {
-    //             try {
-    //                 setPlayState(prev => [...[JSON.parse(data)], ...prev.slice(0, prev.length)])
-    //             } catch (error) {
-    //                 console.log(error)
-    //             }
-    //             console.log("New public message: ",JSON.parse(data))
-    //         })
-
-    //         return () => {
-    //             wsClient.off("connect")
-    //             wsClient.off("new public message")
-    //         }
-
-    // }, [])
-
-    const [data, setData] = useSync(wsClient, "abc123", {s:34})
+        return () => {
+            wsClient.off("connect")
+            wsClient.off("new public message")
+        }
+    }, [])
 
     const [playState, setPlayState] = useState(play)
     const [groupState, setGroup] = useState("News");
@@ -54,7 +39,7 @@ export default function Stacks() {
             <div className="w-full h-fit relative text-center">
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium mt-20 w-fit md:px-10 py-6 rounded-3xl 
                 m-auto text-white tracking-tight ">
-                    Real quick, easy, fast {JSON.stringify(data)}
+                    Real quick, easy, fast
                 </h1>
                 <p className="text-lg md:text-xl text-mybg2 w-11/12 md:w-2/3 m-auto">
                     Below is public ignition room you can play with, duplicate the tab to see it in action.
@@ -79,12 +64,11 @@ export default function Stacks() {
                             </Select>
                             <input onChange={(e) => setMessage(e.target.value)} className="w-full sm:w-[75%] h-12 px-4 rounded-lg outline-none border border-myborder bg-black" placeholder="Type your message .." type="text" />
                             <span onClick={() => {
-                                setData((prev: { s: number; }) => {s:prev.s + 1});
                                 // setPlayState(prev => [{ group: groupState, message: message }, ...prev.slice(0, prev.length)])
-                                // wsClient.emit("new public message", "ignition-site-room", JSON.stringify({
-                                //     group: groupState,
-                                //     message: message
-                                // }))
+                                wsClient.emit("new public message", "ignition-site-room", JSON.stringify({
+                                    group: groupState,
+                                    message: message
+                                }))
                             }}
                                 className='inline-flex h-12 animate-background-shine cursor-pointer items-center 
                             justify-center rounded-xl border border-gray-800 bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] 
