@@ -4,12 +4,9 @@ import Button from "../../components/home/Button"
 import Stacks from "../../components/home/Stacks"
 import Menu from "../../components/home/Menu";
 import Compnies from "../../components/home/Compnies";
-import Galaxy from "../../components/home/Galaxy";
 import Savage from "../../components/home/Savage";
 import Integrations from "../../components/home/Integrations";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/Tabs";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import Pricing from "../../components/home/Pricing";
 import Link from "next/link";
 
 export default function Home() {
@@ -48,10 +45,6 @@ export default function Home() {
 				<div className="min-h-screen w-full grid place-content-center place-items-center gap-8
 				bg-[radial-gradient(circle_500px_at_50%_200px,#100ef14c,transparent)]">
 					<h1 className="text-5xl px-5 sm:text-6xl lg:text-7xl font-medium text-center md:whitespace-nowrap tracking-tight">Keep the data<br />
-						{/* <span className="font-semibold text-mybg">fresh,</span>
-						<span className="font-semibold text-fuchia-500"> dynamic,</span>
-						<span className="font-semibold text-gren-500"> real time</span> */}
-						{/*   */}
 						<span className="text-transparent bg-clip-text bg-gradient-to-r from-mybg to-sky-500 whitespace-nowrap">fresh & dynamic</span>
 					</h1>
 					<div className="flex items-center mt-4">
