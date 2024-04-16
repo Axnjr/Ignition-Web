@@ -35,7 +35,7 @@ export default function Stacks() {
     const [message, setMessage] = useState("Hello");
 
     return (
-        <div className="h-fit py-32 bg-black">
+        <div className="h-fit py-32">
             <div className="w-full h-fit relative text-center">
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium mt-20 w-fit md:px-10 py-6 rounded-3xl 
                 m-auto text-white tracking-tight ">

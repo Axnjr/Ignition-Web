@@ -9,14 +9,14 @@
 
 ::selection {
   background-color: #8800ff35;
-  color: #120ef14c;
+  color: #0400ff;
 }
 
-/* ::-webkit-scrollbar{ */
-  /* width: 12px; */
-  /* height: 8px; */
-  /* background-color: transparent; */
-/* } */
+::-webkit-scrollbar{
+  width: 12px;
+  height: 8px;
+  background-color: transparent;
+}
 
 body {
   font-family: "Radha";

@@ -18,18 +18,18 @@ export default function Home() {
 			<div className="text-white bg-gradient-to-b from-gray-950 to-black relative">
 				<Nav />
 				<Menu />
-				<main className="flex flex-col items-center justify-center py-28 h-fit w-full
-				bg-[radial-gradient(circle_500px_at_50%_200px,#000,transparent)]">
+				<main className="flex flex-col items-center justify-center py-28 h-fit w-full">
+				{/* bg-[radial-gradient(circle_500px_at_50%_200px,#000,transparent)] */}
 					<div className=" w-2/3 pt-6 h-full flex flex-col pl-12 mt-12
 						items-center justify-center inset-0 bg-transparent gap-2">
 						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3 z-0">
 							Litrally real time, powered by Rust
 						</div>
-						<h1 className="heroIn mt-4 text-[2.8rem] leading-[1] md:text-6xl min-[1024px]:text-7xl tracking-tight 
+						<h1 className="heroIn mt-4 text-[2.8rem] leading-[1] md:text-6xl min-[1024px]:text-8xl tracking-tight 
 							text-center text-white">
-							Build <span className="text-sky-500">⁕</span> real time apps <span className="">
+							Build real time apps <span className="">
 							{/* bg-clip-text bg-gradient-to-tr from-aber-300 via-mybg to-gray-300 text-transparent font-semibold */}
-							fast, <br/> with ease ♪
+							fast, with ease
 							</span>
 						</h1>
 						<span className="heroIn inter-tight text-base sm:text-lg w-[70%] sm:w-2/3 md:w-2/3 text-center font-normal 
@@ -39,11 +39,14 @@ export default function Home() {
 						<br />
 						<Button varient="filled" className="z-10" text="Start Free" />
 					</div>
-					{/* <div className="w-1/2 h-full">
-
-					</div> */}
 				</main>
-				<Compnies />
+				<section className="w-full h-24 my-24 border-y-2 flex items-center whitespace-nowrap overflow-x-hidden tracking-tighter">
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
+				</section>
+				{/* <Compnies /> */}
 				<Stacks />
 				<Savage />
 				<Integrations />
