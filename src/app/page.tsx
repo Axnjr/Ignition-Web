@@ -18,16 +18,19 @@ export default function Home() {
 			<div className="text-white bg-gradient-to-b from-gray-950 to-black relative">
 				<Nav />
 				<Menu />
-				<main className="flex flex-col items-start justify-center py-28 h-fit w-full
-				bg-[radial-gradient(circle_500px_at_50%_200px,#100ef14c,transparent)]">
-					<div className="min-[1024px]:w-3/4 min-[1024px]:m-auto pt-12 h-full flex flex-col
-							items-center justify-center inset-0 w-full bg-transparent gap-2">
+				<main className="flex flex-col items-center justify-center py-28 h-fit w-full
+				bg-[radial-gradient(circle_500px_at_50%_200px,#000,transparent)]">
+					<div className=" w-2/3 pt-6 h-full flex flex-col pl-12 mt-12
+						items-center justify-center inset-0 bg-transparent gap-2">
 						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3 z-0">
 							Litrally real time, powered by Rust
 						</div>
-						<h1 className="heroIn mt-4 text-[2.5rem] leading-[1] px-6 md:text-6xl min-[1024px]:text-7xl tracking-tight 
-							font-medium text-center text-white">
-							Real time made simple for developers
+						<h1 className="heroIn mt-4 text-[2.8rem] leading-[1] md:text-6xl min-[1024px]:text-7xl tracking-tight 
+							text-center text-white">
+							Build <span className="text-sky-500">⁕</span> real time apps <span className="">
+							{/* bg-clip-text bg-gradient-to-tr from-aber-300 via-mybg to-gray-300 text-transparent font-semibold */}
+							fast, <br/> with ease ♪
+							</span>
 						</h1>
 						<span className="heroIn inter-tight text-base sm:text-lg w-[70%] sm:w-2/3 md:w-2/3 text-center font-normal 
 							tracking-wide text-neutral-50 mt-8">
@@ -36,6 +39,9 @@ export default function Home() {
 						<br />
 						<Button varient="filled" className="z-10" text="Start Free" />
 					</div>
+					{/* <div className="w-1/2 h-full">
+
+					</div> */}
 				</main>
 				<Compnies />
 				<Stacks />
