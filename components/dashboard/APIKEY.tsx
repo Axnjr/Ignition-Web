@@ -1,5 +1,4 @@
 'use client'
-import { useState } from "react"
 import { useSession } from "next-auth/react"
 import { Progress } from "../ui/Progress"
 
@@ -13,7 +12,7 @@ export default function ApiKey() {
            flex flex-col items-start justify-center">
                 <div className="flex items-center justify-between w-full my-3 text-sm">
                     <h6 className="text-neutral-500">API Key</h6>
-                    <h6 className="text-neutral-500 ">{session?.dbPayload.sub}</h6>
+                    <h6 className="text-neutral-500 ">{session?.dbPayload?.sub}</h6>
                 </div>
                 <div className="w-full h-[0.5px] bg-neutral-300 dark:bg-neutral-800 my-2"></div>
                 <div className="flex items-center justify-between w-full my-3 text-sm">
