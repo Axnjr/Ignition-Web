@@ -18,11 +18,11 @@ export default function Nav() {
     return (
         <nav className="w-full h-20 flex justify-between items-center pl-4 pr-2 sm:px-8 fixed top-0 z-50
         min-[1400px]:px-32 m-auto right-0 left-0 backdrop-blur-xl">
+            <div className="flex justify-between items-center gap-6">
                 <h1 className="text-3xl font-medium flex items-center mr-8 tracking-tight">
                     {/* <img src="/logo.png" className="w-8 h-8 mr-2" /> */}
                     Ignition
                 </h1>
-            <div className="flex justify-between items-center gap-6">
                 <div className="items-center hidden min-[960px]:flex gap-6 pt-2 text-md cursor-pointer">
                     <h1><a>Products</a></h1>
                     <h1><a>Use Cases</a></h1>
