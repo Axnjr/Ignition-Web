@@ -7,20 +7,20 @@ import { User } from '@prisma/client'
 import db from './db2'
 
 export const authOptions: NextAuthOptions = {
-	// secret: process.env.NEXTAUTH_SECRET,
+	secret: process.env.NEXTAUTH_SECRET,
   	// adapter: PrismaAdapter(prismaDB),
 	// session: { strategy: 'jwt' },
 
-    // providers: [
-    //   GoogleProvider({
-    //     clientId: process.env.GOOGLE_CLIENT_ID!,
-    //     clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    //   }),
-	//   GithubProvider({
-	// 	clientId: process.env.GITHUB_CLIENT_ID!,
-	// 	clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-	//   })
-    // ],
+    providers: [
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID!,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      }),
+	  GithubProvider({
+		clientId: process.env.GITHUB_CLIENT_ID!,
+		clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+	  })
+    ],
 
 	// callbacks:{
 	// 	redirect() {
