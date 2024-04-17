@@ -12,21 +12,21 @@ export default function Stacks() {
     const [message, setMessage] = useState("Hello");
 
     return (
-        <div className="h-fit py-32 bg-black">
+        <div className="h-fit py-32">
             <div className="w-full h-fit relative text-center">
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium mt-20 w-fit md:px-10 py-6 rounded-3xl 
+                {/* <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium mt-20 w-fit md:px-10 py-6 rounded-3xl 
                 m-auto text-white tracking-tight ">
                     Real quick, easy, fast
                 </h1>
                 <p className="text-lg md:text-xl text-mybg2 w-11/12 md:w-2/3 m-auto">
                     Below is public ignition room you can play with, duplicate the tab to see it in action.
-                </p>
+                </p> */}
                 <div className="w-full h-full p-6 bg-black relative">
-                    <section className="w-full m-auto relative pt-12">
+                    <section className="w-full m-auto relative pt-12 flex items-center flex-row-reverse">
                         <div className='absolute top-4 right-0 left-0 flex w-full justify-center'>
                             <div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-mybg to-[rgba(17,17,17,0)] transition-all w-[300px]' />
                         </div>
-                        <div className="flex items-center w-full md:w-10/12 m-auto gap-2 rounded-xl justify-center px-2 py-3">
+                        <div className="flex flex-col items-center w-full md:w-10/12 m-auto gap-2 rounded-xl justify-center px-2 py-3">
                             <Select onValueChange={(item) => {
                                 setGroup(prev => item);
                             }}>
@@ -50,28 +50,28 @@ export default function Stacks() {
                             </span>
                         </div>
                         <div className="flex flex-col justify-start items-center pt-2 border border-myborder rounded-xl w-full md:w-10/12
-                         overflow-y-hidden h-[55vh] sm:h-[60vh] mt-2 bg-gradient-to-b from-gray-950 to-black m-auto relative shadow-2xl shadow-mybg">
+                         overflow-y-hidden h-[55vh] sm:h-[60vh] mt-2 bg-gradient-to-b from-gray-950 to-black m-auto relative">
                             {
                                 playState.map((item, index) => <div className="text-base my-2 text-left font-medium text-neutral-600 
-                                    w-full px-4 p-1 border-b border-myborder flex items-center justify-between" key={index}>
-                                    <div className="w-[30%] lg:w-[20%] hidden sm:block ">
+                                    w-full px-4 p-1 border-b border-myborder flex items-center" key={index}>
+                                    <div className="w-[30%] lg:w-[30%] hidden sm:block">
                                         <span className="p-1 bg-green-500/10 text-sm text-green-500 rounded-lg">
                                             Group
                                         </span>&nbsp; {item.group.length > 12 ? item.group.slice(0, 12) + ".." : item.group}
                                     </div>
-                                    <div className="w-full sm:w-[70%] lg:w-[60%] text-left flex items-center justify-start sm:justify-end 
+                                    <div className="w-full sm:w-[70%] lg:w-[70%] text-left flex items-center justify-start sm:justify-end 
                                     md:justify-start whitespace-nowrap overflow-x-scroll">
                                         <span className="p-1 bg-blue-500/10 text-sm text-blue-500 rounded-lg">
                                             Message
                                         </span>
                                         &nbsp; {item.message.length > 60 ? item.message.slice(0, 60) + ".." : item.message}
                                     </div>
-                                    <div className="hidden lg:flex w-[20%] text-left items-center justify-start">
+                                    {/* <div className="hidden lg:flex w-[20%] text-left items-center justify-start">
                                         <span className="p-1 bg-fuchsia-500/10 text-sm text-fuchsia-500 rounded-lg">
                                             Event
                                         </span>
                                         &nbsp; Public Room
-                                    </div>
+                                    </div> */}
                                 </div>)
                             }
                             <div className="w-full absolute -bottom-2 h-10 bg-gradient-to-b from-neutral-950 to-black blur-lg"></div>
