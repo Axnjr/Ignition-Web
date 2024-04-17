@@ -40,11 +40,12 @@ export default function Home() {
 						<Button varient="filled" className="z-10" text="Start Free" />
 					</div>
 				</main>
-				<section className="w-full h-24 my-24 border-y-2 flex items-center whitespace-nowrap overflow-x-hidden tracking-tighter">
-					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
-					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
-					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
-					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users &nbsp;</h1>
+				<section className="text_srcoll w-full h-24 my-24 border-y-2 flex items-center whitespace-nowrap overflow-x-hidden tracking-tighter
+				border-neutral-800 text-neutral-500">
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users&nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users&nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users&nbsp;</h1>
+					<h1 className="text-7xl leading-[1.3]"><span className="text-blue-700">⁕</span> 587 Live Users&nbsp;</h1>
 				</section>
 				{/* <Compnies /> */}
 				<Stacks />
