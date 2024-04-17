@@ -48,7 +48,7 @@ module.exports = {
       },
       colors:{
         // 'mybg':"#393BB2",
-        "mybg":"#393bb2",
+        "mybg":"#A219FF",
         'mybg2':"rgb(80,80,80)",
         'col':"black",
         'myborder':'rgb(38, 38, 38)'
