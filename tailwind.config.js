@@ -48,10 +48,13 @@ module.exports = {
       },
       colors:{
         // 'mybg':"#393BB2",
-        "mybg":"#A219FF",
+        "mybg":"#4d28b6",
         'mybg2':"rgb(80,80,80)",
         'col':"black",
         'myborder':'rgb(38, 38, 38)'
+      },
+      backgroundImage:{
+        "fancy":"radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);"
       }
     },
   },
