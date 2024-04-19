@@ -13,15 +13,37 @@ export default function Stacks() {
 
     return (
         <div className="h-fit py-32">
-            <div className="w-full h-fit relative text-center">
-                {/* <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium mt-20 w-fit md:px-10 py-6 rounded-3xl 
-                m-auto text-white tracking-tight ">
-                    Real quick, easy, fast
-                </h1>
-                <p className="text-lg md:text-xl text-mybg2 w-11/12 md:w-2/3 m-auto">
-                    Below is public ignition room you can play with, duplicate the tab to see it in action.
-                </p> */}
-                <div className="w-full h-full p-6 bg-black relative">
+            <div className="w-[96%] h-fit relative text-center grid grid-cols-2 m-auto gap-4">
+                <div className="cols-span-1 rounded-2xl border-t border-myborder p-12 h-full flex flex-col items-center">
+                    <div className="w-9/12 h-10 rounded-full border border-neutral-700 flex items-center justify-between">
+                        <input className=" outline-none pl-4 bg-transparent text-sm w-[80%]" type="text" placeholder="Type message .." />
+                        <span onClick={() => {
+                            setPlayState(prev => [{ group: groupState, message: message }, ...prev.slice(0, prev.length)])
+                        }}
+                            className='inline-flex h-full animate-background-shine cursor-pointer items-center 
+                            justify-center rounded-tr-full rounded-br-full border border-gray-800 bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] 
+                            bg-[length:250%_100%] pl-2 pr-4 py-1 text-sm font-medium text-gray-300'>
+                            <RocketIcon className="mr-2" /> Send
+                        </span>
+                    </div>
+                    <div className="flex flex-col justify-start items-center pt-2 rounded-xl w-full
+                        overflow-y-hidden h-[55vh] sm:h-[60vh] mt-12 bg-gradient-to-b from-gray-950 to-black m-auto relative">
+                        <span className=" text-neutral-500">
+                            Wss:200 : {"{"} mes: "Radha krishn " {"}"}
+                        </span>
+                        <div className="w-full absolute -bottom-2 h-10 bg-gradient-to-b from-neutral-950 to-black blur-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+/**
+ * 
+ * <div className="w-full h-full p-6 bg-black relative">
                     <section className="w-full m-auto relative pt-12 flex items-center flex-row-reverse">
                         <div className='absolute top-4 right-0 left-0 flex w-full justify-center'>
                             <div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-mybg to-[rgba(17,17,17,0)] transition-all w-[300px]' />
@@ -71,14 +93,13 @@ export default function Stacks() {
                                             Event
                                         </span>
                                         &nbsp; Public Room
-                                    </div> */}
-                                </div>)
-                            }
-                            <div className="w-full absolute -bottom-2 h-10 bg-gradient-to-b from-neutral-950 to-black blur-lg"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    )
-}
+                                    </div> 
+                                    </div>)
+                                }
+                                <div className="w-full absolute -bottom-2 h-10 bg-gradient-to-b from-neutral-950 to-black blur-lg"></div>
+                            </div>
+                        </section>
+                    </div>
+ * 
+ * 
+ */
