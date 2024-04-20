@@ -54,7 +54,8 @@ module.exports = {
         'myborder':'rgb(38, 38, 38)'
       },
       backgroundImage:{
-        "fancy":"radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);"
+        "fancy":"radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);",
+        "fancyflip":"radial-gradient(131.82% 109.9% at 50% 100%, transparent 37.41%, #63e 69.27%, #fff 100%)"
       }
     },
   },
