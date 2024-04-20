@@ -1,17 +1,138 @@
 "use client";
 import Nav from "../../components/home/Nav"
-import {Button} from "../../components/ui/Button"
-import Stacks from "../../components/home/Stacks"
+import { Button } from "../../components/ui/Button"
+import { Highlight, themes } from "prism-react-renderer"
+import type { PrismTheme, StyleObj } from "prism-react-renderer"
+// import Stacks from "../../components/home/Stacks"
 import Menu from "../../components/home/Menu";
-import Compnies from "../../components/home/Compnies";
-import Galaxy from "../../components/home/Galaxy";
-import Savage from "../../components/home/Savage";
-import Integrations from "../../components/home/Integrations";
+// import Compnies from "../../components/home/Compnies";
+// import Galaxy from "../../components/home/Galaxy";
+// import Savage from "../../components/home/Savage";
+// import Integrations from "../../components/home/Integrations";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/Tabs";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import Pricing from "../../components/home/Pricing";
-import Link from "next/link";
+// import { ExternalLinkIcon } from "@radix-ui/react-icons";
+// import Pricing from "../../components/home/Pricing";
+// import Link from "next/link";
 import Counter from "../../components/ui/Counter";
+
+const codeBlock = `import { useSync } from "@ignition/react";
+
+export default function MyComp() {
+    // data to be synced
+    const [state, setState, onExternalChange] = useSync({  
+        group: "site_viewers",
+        maxClients: 500,
+        data: "You can sync anytype of data !"
+    });
+
+    return ( 
+		<>  {/* Your Component */}  </> 
+	)
+}`
+
+const theme: PrismTheme = {
+	plain: {
+		color: "#fff",
+		backgroundColor: "#1111124c",
+	},
+	styles: [
+		{
+			types: ["prolog"],
+			style: {
+				color: "#ec5189",
+			},
+		},
+		{
+			types: ["comment"],
+			style: {
+				color: "rgb(50,50,50)",
+			},
+		},
+		{
+			types: ["builtin", "changed", "keyword", "interpolation-punctuation"],
+			style: {
+				color: "#2a6af3",
+			},
+		},
+		{
+			types: ["number", "inserted"],
+			style: {
+				color: "#32cba3",
+			},
+		},
+		{
+			types: ["constant"],
+			style: {
+				color: "#100ff2",
+			},
+		},
+		{
+			types: ["attr-name", "variable"],
+			style: {
+				color: "",
+			},
+		},
+		{
+			types: ["deleted", "string", "attr-value", "template-punctuation"],
+			style: {
+				color: "#E2AAFC",
+			},
+		},
+		{
+			types: ["selector"],
+			style: {
+				color: "",
+			},
+		},
+		{
+			// Fix tag color
+			types: ["tag"],
+			style: {
+				color: "rgb(78, 201, 176)",
+			},
+		},
+		{
+			// Fix tag color for HTML
+			types: ["tag"],
+			languages: ["markup"],
+			style: {
+				color: "rgb(86, 156, 214)",
+			},
+		},
+		{
+			types: ["punctuation", "operator"],
+			style: {
+				color: "rgb(212, 212, 212)",
+			},
+		},
+		{
+			// Fix punctuation color for HTML
+			types: ["punctuation"],
+			languages: ["markup"],
+			style: {
+				color: "#808080",
+			},
+		},
+		{
+			types: ["function"],
+			style: {
+				color: "#ec5189",
+			},
+		},
+		{
+			types: ["class-name"],
+			style: {
+				color: "rgb(78, 201, 176)",
+			},
+		},
+		{
+			types: ["char"],
+			style: {
+				color: "#100fed",
+			},
+		},
+	],
+}
 
 export default function Home() {
 	// const { data: session, status } = useSession()
@@ -43,7 +164,7 @@ export default function Home() {
 				</main>
 
 				<div className="h-fit w-full text-center py-24">
-					<h1 className="text-4xl mt-24 mb-12 tracking-tight">Easy solutions to complex engineering problems</h1>
+					<h1 className="text-4xl mt-20 mb-10 tracking-tight">Easy solutions to complex engineering problems</h1>
 					<Tabs defaultValue="sync">
 						<TabsList className="flex justify-center gap-2 rounded-full w-fit m-auto
 						bg-white text-black">
@@ -57,36 +178,51 @@ export default function Home() {
 								Notify
 							</TabsTrigger>
 						</TabsList>
-						<TabsContent value="sync" className="flex items-center justify-between mt-14 w-11/12 mx-auto h-fit
-						border border-myborder rounded-3xl px-10 py-28 bg-fancy">
-							<div className="flex flex-col items-start justify-center h-full w-3/6 text-left">
-								<h1 className="text-5xl font-bold">
+						<TabsContent value="sync" className="flex items-center justify-center mt-24 w-11/12 mx-auto h-fit
+						rounded-t-[5rem] px-10 py-28 bg-fancyflip flex-col">
+							<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
+								<h1 className="text-6xl font-">
 									Sync peice of data across millions of devices
 								</h1>
-								<br/>
+								<br />
 								<p className="text-lg">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe perferendis mollitia repellat iusto consequatur placeat, similique fugiat.
+									Synconized music, screens, analytics, cursors, collbarating tools
 								</p>
-								<br/>
+								<br />
 								<div className="flex items-center gap-2">
-								<Button>Read Docs</Button>
-								<Button variant="outline">Check examples</Button>
+									<Button>Read Docs</Button>
+									<Button variant="outline">Check examples</Button>
 								</div>
 							</div>
-							<img className="w-1/2" src="/Synced-playground.ts.png"/>
-							
+							<div className="w-8/12 h-[55vh] mt-12">
+								<Highlight theme={{...theme}} code={codeBlock} language="tsx" >
+									{({ className, style, tokens, getLineProps, getTokenProps }) => (
+										<pre className="py-10 px-8 rounded-xl text-left" style={style}>
+											{tokens.map((line, i) => (
+												<div key={i} {...getLineProps({ line })}>
+													<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
+													{line.map((token, key) => (
+														<span key={key} {...getTokenProps({ token })} />
+													))}
+												</div>
+											))}
+										</pre>
+									)}
+								</Highlight>
+							</div>
+
 						</TabsContent>
-							
+
 					</Tabs>
 				</div>
 
-				<div className="flex flex-col items-center justify-end h-fit mt-12 py-32">
+				<div className="flex flex-col items-center justify-end h-fit mt-12 pb-32">
 					<div className="col-span-3 text-center">
 						<span className="border-2 border-mybg rounded-full py-1 px-4">Why Ignition ?</span>
-						<h1 className="text-7xl capitalize my-5">Its ridicusly fast</h1>
+						<h1 className="text-7xl capitalize mt-10 mb-5">Its ridicusly fast</h1>
 						{/* <Button className="whitespace-nowrap" text="Test Speed" varient="filled" /> */}
 					</div>
-					<div className="grid w-[98%] m-auto mt-24 h-fit grid-cols-3 px-8 rounded-3xl bg-myb border-t border-mybg py-12">
+					<div className="grid w-[98%] m-auto mt-14 h-fit grid-cols-3 px-8  py-12">
 						<div className="hover:bg-fancy
 						col-span-1 p-8 h-full border-r border-mybg group/box-body relative lg:col-span-1 text-center lg:text-left ">
 							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={5} /><span className="text-3xl">MS</span></h1>
