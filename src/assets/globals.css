@@ -12,11 +12,11 @@
   color: #f2ff00;
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   width: 2px;
   height: 2px;
   background-color: transparent;
-}
+} */
 
 body {
   font-family: "Radha";
