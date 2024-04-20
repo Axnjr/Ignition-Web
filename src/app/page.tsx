@@ -218,19 +218,36 @@ export default function Home() {
 
 				<div className="flex flex-col items-center justify-end h-fit mt-12 pb-32">
 					<div className="col-span-3 text-center">
-						<span className="border-2 border-mybg rounded-full py-1 px-4">Why Ignition ?</span>
-						<h1 className="text-7xl capitalize mt-10 mb-5">Its ridicusly fast</h1>
-						{/* <Button className="whitespace-nowrap" text="Test Speed" varient="filled" /> */}
+						{/* <span className="border-2 border-mybg rounded-full py-1 px-4">Why Ignition ?</span> */}
+						<h1 className="text-6xl  mt-10 mb-5 w-[55%] m-auto bg-clip-text text-transparent
+						bg-[radial-gradient(45%_100%_at_50%_50%,#fff_30%,hsla(0,0%,100%,0.4)_100%)] font-normal">
+							Reliable and rediculously fast infrastructure, powered by Rust.
+						</h1>
+						{/* <Button className="whitespace-nowrap">Test Speed</Button> */}
 					</div>
-					<div className="grid w-[98%] m-auto mt-14 h-fit grid-cols-3 px-8  py-12">
-						<div className="hover:bg-fancy
-						col-span-1 p-8 h-full border-r border-mybg group/box-body relative lg:col-span-1 text-center lg:text-left ">
+					<section className="grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4">
+						{/* <div className="col-span-1 flex flex-col items-start justify-start border rounded-[3rem] 
+						border-myborder h-[40vh] p-10 bg-white/5">
+							<h1 className="text-2xl ">Litrally Real time, fastt</h1>
+							<p className="text-mybg2">Minimum latency at any scale</p>
+							<div className="flex items-center justify-end gap-3 w-full">
+								<div className="p-4 w-1/3 bg-black my-3 rounded-xl">
+									<span>Shared</span>
+									<h1 className="text-4xl font-black bg-gradient-to-r from-mybg to-blue-500 bg-clip-text text-transparent">135ms</h1>
+								</div>
+								<div className="p-4 w-1/3 bg-black my-3 rounded-xl">
+									<span>Dedicated</span>
+									<h1 className="text-4xl font-black bg-gradient-to-r from-mybg to-blue-500 bg-clip-text text-transparent">5ms</h1>
+								</div>
+							</div>
+						</div> */}
+						<div className="hover:bg-fancy col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-center lg:text-left ">
 							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={5} /><span className="text-3xl">MS</span></h1>
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-xl text-neutral-500">for users with dedicated plans</h1>
 						</div>
 						<div className="hover:bg-fancy
-						col-span-1 p-8 h-full border-r border-mybg group/box-body relative lg:col-span-1 text-center">
+						col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-center">
 							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={140} /><span className="text-3xl">MS</span></h1>
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-xl text-neutral-500">for users with shared plans</h1>
@@ -241,7 +258,7 @@ export default function Home() {
 							<h1 className="text-xl font-medium">Uptime</h1>
 							<h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
 						</div>
-					</div>
+					</section>
 				</div>
 
 			</div>
@@ -305,6 +322,25 @@ export default function Home() {
 							<SDK sdk={sdkState}/>
 						</div>
 					</motion.div>
+
+					<div className="hover:bg-fancy
+						col-span-1 p-8 h-full border-r border-mybg group/box-body relative lg:col-span-1 text-center lg:text-left ">
+							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={5} /><span className="text-3xl">MS</span></h1>
+							<h1 className="text-xl font-medium">Mean latency</h1>
+							<h1 className="text-xl text-neutral-500">for users with dedicated plans</h1>
+						</div>
+						<div className="hover:bg-fancy
+						col-span-1 p-8 h-full border-r border-mybg group/box-body relative lg:col-span-1 text-center">
+							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={140} /><span className="text-3xl">MS</span></h1>
+							<h1 className="text-xl font-medium">Mean latency</h1>
+							<h1 className="text-xl text-neutral-500">for users with shared plans</h1>
+						</div>
+						<div className="hover:bg-fancy
+						col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-right">
+							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={99} /><span className="text-3xl">%</span></h1>
+							<h1 className="text-xl font-medium">Uptime</h1>
+							<h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
+						</div>
 
 
 <Stacks />
