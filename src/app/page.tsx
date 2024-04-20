@@ -14,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/Ta
 // import Pricing from "../../components/home/Pricing";
 // import Link from "next/link";
 import Counter from "../../components/ui/Counter";
+import Savage from "../../components/home/Savage";
 
 const codeBlock = `import { useSync } from "@ignition/react";
 
@@ -197,7 +198,7 @@ export default function Home() {
 							<div className="w-8/12 h-[55vh] mt-12">
 								<Highlight theme={{...theme}} code={codeBlock} language="tsx" >
 									{({ className, style, tokens, getLineProps, getTokenProps }) => (
-										<pre className="py-10 px-8 rounded-xl text-left" style={style}>
+										<pre className="py-6 px-8 rounded-xl text-left" style={style}>
 											{tokens.map((line, i) => (
 												<div key={i} {...getLineProps({ line })}>
 													<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
@@ -218,47 +219,50 @@ export default function Home() {
 
 				<div className="flex flex-col items-center justify-end h-fit mt-12 pb-32">
 					<div className="col-span-3 text-center">
-						{/* <span className="border-2 border-mybg rounded-full py-1 px-4">Why Ignition ?</span> */}
-						<h1 className="text-6xl  mt-10 mb-5 w-[55%] m-auto bg-clip-text text-transparent
-						bg-[radial-gradient(45%_100%_at_50%_50%,#fff_30%,hsla(0,0%,100%,0.4)_100%)] font-normal">
+						<div className="section-header-badge relative w-max rounded-full m-auto">
+							<div className="py-1 px-4 font-medium">
+								Why Ignition - 1
+							</div>
+						</div>
+						<h1 className="text-6xl mt-6 mb-5 w-[55%] m-auto 
+						font-normal">
+						{/* bg-clip-text text-transparent bg-[radial-gradient(45%_100%_at_50%_50%,#fff_30%,hsla(0,0%,100%,0.4)_100%)]  */}
 							Reliable and rediculously fast infrastructure, powered by Rust.
 						</h1>
 						{/* <Button className="whitespace-nowrap">Test Speed</Button> */}
 					</div>
-					<section className="grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4">
-						{/* <div className="col-span-1 flex flex-col items-start justify-start border rounded-[3rem] 
-						border-myborder h-[40vh] p-10 bg-white/5">
-							<h1 className="text-2xl ">Litrally Real time, fastt</h1>
-							<p className="text-mybg2">Minimum latency at any scale</p>
-							<div className="flex items-center justify-end gap-3 w-full">
-								<div className="p-4 w-1/3 bg-black my-3 rounded-xl">
-									<span>Shared</span>
-									<h1 className="text-4xl font-black bg-gradient-to-r from-mybg to-blue-500 bg-clip-text text-transparent">135ms</h1>
-								</div>
-								<div className="p-4 w-1/3 bg-black my-3 rounded-xl">
-									<span>Dedicated</span>
-									<h1 className="text-4xl font-black bg-gradient-to-r from-mybg to-blue-500 bg-clip-text text-transparent">5ms</h1>
-								</div>
-							</div>
-						</div> */}
-						<div className="hover:bg-fancy col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-center lg:text-left ">
-							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={5} /><span className="text-3xl">MS</span></h1>
+					<section className=" grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-6">
+						<div className="col-span-1 p-8 border border-myborder rounded-2xl
+						 h-full group/box-body relative lg:col-span-1 text-center lg:text-left ">
+							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={5} /><span className="text-3xl">MS</span></h1>
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-xl text-neutral-500">for users with dedicated plans</h1>
 						</div>
-						<div className="hover:bg-fancy
-						col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-center">
-							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={140} /><span className="text-3xl">MS</span></h1>
+						<div className="col-span-1 p-8 border border-myborder rounded-2xl
+						 h-full group/box-body relative lg:col-span-1 text-center">
+							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={140} /><span className="text-3xl">MS</span></h1>
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-xl text-neutral-500">for users with shared plans</h1>
 						</div>
-						<div className="hover:bg-fancy
-						col-span-1 p-8 h-full group/box-body relative lg:col-span-1 text-right">
-							<h1 className="text-9xl font-bold bg-gradient-to-tr from-sky-50 to-mybg bg-clip-text text-transparent"><Counter value={99} /><span className="text-3xl">%</span></h1>
+						<div className="col-span-1 p-8 border border-myborder rounded-2xl
+						 h-full group/box-body relative lg:col-span-1 text-right">
+							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={99} /><span className="text-3xl">%</span></h1>
 							<h1 className="text-xl font-medium">Uptime</h1>
 							<h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
 						</div>
+						<div className="col-span-2 p-8 border border-myborder rounded-2xl">
+
+						</div>
 					</section>
+				</div>
+
+				<img className="-mt-32 rotate-180 w-full h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg"/>
+				
+				<div className="text-center w-full h-fit pt-12">
+					{/* <span className="rounded-full py-1 px-4 border-2 border-mybg">Use Cases</span> */}
+					<h1 className="text-8xl tracking-tight">Use cases</h1>
+					<p className="text-gray-500 w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
+					<Savage/>
 				</div>
 
 			</div>
