@@ -90,6 +90,42 @@ body {
   }
 }
 
+.features-card:before {
+  background-color: #ffffff3d;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 88px;
+  width: 1px;
+}
+
+
+.section-header-badge:after {
+  background: linear-gradient(90.01deg, rgba(198, 66, 245, 0.24) .01%, rgb(186, 156, 255) 50.01%, rgba(156, 178, 255, .24) 100%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.section-header-badge div {
+  background: linear-gradient(0deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), linear-gradient(90.01deg, #e59cff .01%, #ba9cff 50.01%, #9cb2ff 100%);
+    background-blend-mode: normal, screen;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 /* .gssss {
   --color: #393BB2 ;
   --color-bg-primary: #000212 ;
