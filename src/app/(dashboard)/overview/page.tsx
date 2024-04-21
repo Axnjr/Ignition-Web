@@ -26,7 +26,7 @@ export default async function Overview() {
 					</h1> 
 					{/* <br /> */}
 				</div>
-				<ApiKey/>
+				{/* <ApiKey/> */}
 			</div>
 			<div className="mt-6 border rounded-xl w-full p-4 h-fit py-6 dark:border-neutral-800">
 				<h1 className="text-base m-2 pl-2 mb-6">Add to your project</h1>
