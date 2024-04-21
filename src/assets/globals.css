@@ -8,15 +8,15 @@
 }
 
 ::selection {
-  background-color: #f6ff0056;
-  color: #f2ff00;
+  background-color: #00eeff38;
+  color: #00fff7;
 }
 
-/* ::-webkit-scrollbar{
+::-webkit-scrollbar{
   width: 2px;
   height: 2px;
   background-color: transparent;
-} */
+}
 
 body {
   font-family: "Radha";
