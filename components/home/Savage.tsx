@@ -68,8 +68,8 @@ export default function Savage() {
             </p>
         */}
             {/* <div className="w-full m-auto h-[2px] bg-gradient-to-r from-[#070713] from-25% via-mybg to-80% to-[#070713]"></div>  */}
-            <div className="w-full h-fit grid-cols-1 sm:grid-cols-2 grid lg:grid-cols-3 place-content-center mt-16
-            place-items-start border-t border-myborder pt-14 ">
+            <div className="w-full h-fit grid-cols-1 sm:grid-cols-2 grid lg:grid-cols-3 place-content-center mt-28
+            place-items-start border-t border-myborder pt-5 ">
                 {
                     use.map((useCase, id) => <div key={id} className="col-span-1 text-left px-8 my-6
                     p-3">
