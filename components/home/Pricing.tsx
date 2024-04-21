@@ -81,11 +81,11 @@ export default function Pricing() {
     const [annaul, setAnnual] = useState(false)
 
     return (
-        <div className="h-fit pb-32 my-2 overflow-hidden w-[96%] border-t border-neutral-700 pt-32 rounded-lg m-auto relative text-center">
-            <div className='absolute top-0 right-0 left-0 flex w-full justify-center'>
+        <div className="h-fit pb-32 my-2 overflow-hidden w-[96%] pt-12 rounded-lg m-auto relative text-center">
+            {/* <div className='absolute top-0 right-0 left-0 flex w-full justify-center'>
                 <div className='left-0 h-[1px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-mybg to-[rgba(17,17,17,0)] transition-all w-[300px]' />
                 <div className="conic_line -top-1 left-1/2 h-[500px] w-full md:max-w-[800px] user-select-none center pointer-events-none absolute max-w-full -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
-            </div>
+            </div> */}
             <h4 className="text-7xl text-center font-medium">Pricing</h4>
             <p className="col-span-3 text-center text-xl text-mybg2 font-normal w-1/2 m-auto mt-5">
                 Use for free, upgarde anytime, Switch between plans according to your needs |
