@@ -15,6 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/Ta
 // import Link from "next/link";
 import Counter from "../../components/ui/Counter";
 import Savage from "../../components/home/Savage";
+import { EvervaultCard } from "../../components/ui/evervault-card";
+import Link from "next/link";
+import Pricing from "../../components/home/Pricing";
 
 const codeBlock = `import { useSync } from "@ignition/react";
 
@@ -196,7 +199,7 @@ export default function Home() {
 								</div>
 							</div>
 							<div className="w-8/12 h-[55vh] mt-12">
-								<Highlight theme={{...theme}} code={codeBlock} language="tsx" >
+								<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
 									{({ className, style, tokens, getLineProps, getTokenProps }) => (
 										<pre className="py-6 px-8 rounded-xl text-left" style={style}>
 											{tokens.map((line, i) => (
@@ -221,50 +224,96 @@ export default function Home() {
 					<div className="col-span-3 text-center">
 						<div className="section-header-badge relative w-max rounded-full m-auto">
 							<div className="py-1 px-4 font-medium">
-								Why Ignition - 1
+								Why Ignition ?
 							</div>
 						</div>
 						<h1 className="text-6xl mt-6 mb-5 w-[55%] m-auto 
 						font-normal">
-						{/* bg-clip-text text-transparent bg-[radial-gradient(45%_100%_at_50%_50%,#fff_30%,hsla(0,0%,100%,0.4)_100%)]  */}
 							Reliable and rediculously fast infrastructure, powered by Rust.
 						</h1>
-						{/* <Button className="whitespace-nowrap">Test Speed</Button> */}
 					</div>
-					<section className=" grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-6">
-						<div className="col-span-1 p-8 border border-myborder rounded-2xl
-						 h-full group/box-body relative lg:col-span-1 text-center lg:text-left ">
-							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={5} /><span className="text-3xl">MS</span></h1>
+					<section className=" grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-1">
+						<div className="p-8 border border-myborder rounded-2xl
+						 h-full group/box-body relative lg:col-span-2 text-center lg:text-left ">
 							<h1 className="text-xl font-medium">Mean latency</h1>
-							<h1 className="text-xl text-neutral-500">for users with dedicated plans</h1>
+							<h1 className="text-mybg2 font-medium mt-3 leading-[1.4]">
+								Milliseconds Matter, Get the Speed You Need. Don't let slow updates and lagging 
+								notifications hold your users back. 
+							</h1>
+							<div className="flex items-center gap-2">
+								<div>
+									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
+										{
+											[...Array(20).keys()].map((_,id) => <div key={id}
+												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
+													<div style={{height: Math.floor(Math.random() * 10)+10+"%"}} className="w-full rounded-2xl bg-mybg"></div>
+											</div>)
+										}
+									</div>
+									<label className="text-xl">Dedicated Plan 5ms</label>
+								</div>
+								<div>
+									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
+										{
+											[...Array(20).keys()].map((_,id) => <div key={id}
+												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
+													<div style={{height: (Math.floor(Math.random() * 120)+100)/2.6+"%"}} className="w-full rounded-2xl bg-mybg"></div>
+											</div>)
+										}
+									</div>
+									<label className="text-xl">Shared Plan 145ms</label>
+								</div>
+							</div>
+							
 						</div>
 						<div className="col-span-1 p-8 border border-myborder rounded-2xl
-						 h-full group/box-body relative lg:col-span-1 text-center">
-							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={140} /><span className="text-3xl">MS</span></h1>
-							<h1 className="text-xl font-medium">Mean latency</h1>
-							<h1 className="text-xl text-neutral-500">for users with shared plans</h1>
-						</div>
-						<div className="col-span-1 p-8 border border-myborder rounded-2xl
-						 h-full group/box-body relative lg:col-span-1 text-right">
-							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-fuchsia-400 from-50% to-blue-500 bg-clip-text text-transparent "><Counter value={99} /><span className="text-3xl">%</span></h1>
+						 h-full group/box-body relative lg:col-span-1 text-left">
 							<h1 className="text-xl font-medium">Uptime</h1>
 							<h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
+							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-indigo-400 from-50% to-blue-500 bg-clip-text text-transparent text-center">{">"}<Counter value={99} /><span className="text-3xl">%</span></h1>
 						</div>
-						<div className="col-span-2 p-8 border border-myborder rounded-2xl">
-
-						</div>
+						<EvervaultCard className="col-span-1 border border-myborder rounded-2xl text-left h-[90%]">
+							<h1 className="text-xl font-medium flex items-center">
+								<svg className="w-6 h-6 mr-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+								</svg>
+								Secure
+							</h1>
+							<p className="text-mybg2 font-medium mt-3 leading-[1.4]">
+								End-to-end encryption keeps your data safe we dont touch your data at all.
+							</p>
+						</EvervaultCard>
+						<Link href="/pricing" className="col-span-2 border border-myborder rounded-2xl text-left h-[90%] p-8">
+							<h1 className="text-xl font-medium">Scalable Pricing</h1>
+							<h1 className="text-lg text-neutral-500 mt-2">
+								Start free, then only pay for what you use with duration based metered shared pricing plan, or 
+								take complete control and use without any limitations with our dedicated & enterprize plans.
+							</h1>
+							<div className="flex items-center justify-around mt-10">
+								<div className="rounded-lg border border-myborder p-4 w-44">
+									<span className="text-base text-mybg2">Clients</span>
+									<h1 className="text-3xl text-mybg">100</h1>
+								</div>
+								<div className="rounded-lg border border-myborder p-4 w-44">
+									<span className="text-base text-mybg2">Duration</span>
+									<h1 className="text-3xl text-mybg">1hour</h1>
+								</div>
+								<div className="rounded-lg border border-myborder p-4 w-44">
+									<span className="text-base text-mybg2">Cost</span>
+									<h1 className="text-3xl text-green-500">0.05$</h1>
+								</div>
+							</div>
+						</Link>
 					</section>
 				</div>
-
-				<img className="-mt-32 rotate-180 w-full h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg"/>
-				
-				<div className="text-center w-full h-fit pt-12">
-					{/* <span className="rounded-full py-1 px-4 border-2 border-mybg">Use Cases</span> */}
+				<img className="-mt-32 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" />
+				<div className="text-center w-full h-fit py-12">
 					<h1 className="text-8xl tracking-tight">Use cases</h1>
 					<p className="text-gray-500 w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
-					<Savage/>
+					<Savage />
 				</div>
-
+				<img className="rotate-180 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" />
+				<Pricing/>
 			</div>
 		</>
 	)
