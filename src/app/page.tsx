@@ -155,8 +155,8 @@ export default function Home() {
 						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3 z-0">
 							Litrally real time, powered by Rust
 						</div>
-						<h1 className="heroIn mt-4 text-[2.5rem] leading-[1] px-6 md:text-6xl min-[1024px]:text-8xl tracking-tight 
-							font- text-center text-white capitalize">
+						<h1 className="heroIn mt-4 text-[3rem] leading-[1] px-6 md:text-6xl min-[1024px]:text-8xl tracking-tight 
+							text-center text-white capitalize">
 							Real time made simple for developers
 						</h1>
 						<span className="heroIn inter-tight text-base sm:text-lg w-[70%] sm:w-2/3 md:w-2/3 text-center font-normal 
@@ -169,7 +169,7 @@ export default function Home() {
 				</main>
 
 				<div className="h-fit w-full text-center py-24">
-					<h1 className="text-2xl sm:text-4xl mt-20 mb-10 tracking-tight px-8 sm:px-14">Easy solutions to complex engineering problems</h1>
+					<h1 className="text-2xl sm:text-4xl mt-20 mb-10 tracking-tight px-14">Easy solutions to complex engineering problems</h1>
 					<Tabs defaultValue="sync">
 						<TabsList className="flex justify-center gap-2 rounded-full w-fit m-auto
 						bg-white text-black">
@@ -184,9 +184,9 @@ export default function Home() {
 							</TabsTrigger>
 						</TabsList>
 						<section className="mt-24 w-[96%] mx-auto h-fit
-							rounded-t-[2.9rem] md:rounded-t-[3.5rem] lg:rounded-t-[5rem] px-10 py-28 bg-fancyflip">
+							rounded-t-[2.9rem] md:rounded-t-[3.5rem] lg:rounded-t-[5rem] py-28 bg-fancyflip">
 							<TabsContent value="sync" className="flex items-center justify-center  flex-col">
-								<div className="flex flex-col items-start sm:items-center justify-center h-[40vh] md:h-[55vh] md:w-2/3 ">
+								<div className="flex flex-col items-start sm:items-center justify-center h-[40vh] md:h-[55vh] md:w-2/3 px-10">
 									<h1 className="text-5xl lg:text-6xl tracking-tight text-left sm:text-center">
 										Sync peice of data across millions of devices
 									</h1>
@@ -200,7 +200,7 @@ export default function Home() {
 										<Button variant="outline">Check examples</Button>
 									</div>
 								</div>
-								<div className="w-full sm:w-11/12 lg:w-8/12 h-[55vh] mt-12">
+								<div className="w-full sm:w-11/12 lg:w-8/12 h-[55vh] mt-24 sm:mt-12 px-6">
 									<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
 										{({ className, style, tokens, getLineProps, getTokenProps }) => (
 											<pre className="py-4 px-2 rounded-xl text-left overflow-x-scroll" style={style}>
@@ -292,24 +292,23 @@ export default function Home() {
 								Why Ignition ?
 							</div>
 						</div>
-						<h1 className="text-6xl mt-6 mb-5 w-[55%] m-auto 
-						font-normal">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl mt-6 mb-5 md:w-[55%] m-auto 
+						font-normal px-10 md:px-0">
 							Reliable and rediculously fast infrastructure, powered by Rust.
 						</h1>
 					</div>
-					<section className=" grid w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-1">
-						<div className="p-8 border border-myborder rounded-2xl
-						 h-full group/box-body relative lg:col-span-2 text-center lg:text-left ">
+					<section className="grid w-full lg:w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-2">
+						<div className="p-8 border border-myborder rounded-2xl h-full group/box-body relative col-span-3 lg:col-span-2 text-left ">
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-mybg2 font-medium mt-3 leading-[1.4]">
 								Milliseconds Matter, Get the Speed You Need. Don't let slow updates and lagging
 								notifications hold your users back.
 							</h1>
-							<div className="flex items-center gap-2">
-								<div>
-									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
+							<div className="grid grid-cols-2 gap-2 w-full">
+								<div className="col-span-2 sm:col-span-1">
+									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2 flex-wrap overflow-x-hidden">
 										{
-											[...Array(20).keys()].map((_, id) => <div key={id}
+											[...Array(30).keys()].map((_, id) => <div key={id}
 												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
 												<div style={{ height: Math.floor(Math.random() * 10) + 10 + "%" }} className="w-full rounded-2xl bg-mybg"></div>
 											</div>)
@@ -317,10 +316,10 @@ export default function Home() {
 									</div>
 									<label className="text-xl">Dedicated Plan 5ms</label>
 								</div>
-								<div>
-									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
+								<div className="col-span-2 sm:col-span-1">
+									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2 flex-wrap overflow-hidden">
 										{
-											[...Array(20).keys()].map((_, id) => <div key={id}
+											[...Array(30).keys()].map((_, id) => <div key={id}
 												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
 												<div style={{ height: (Math.floor(Math.random() * 120) + 100) / 2.6 + "%" }} className="w-full rounded-2xl bg-mybg"></div>
 											</div>)
@@ -331,13 +330,13 @@ export default function Home() {
 							</div>
 
 						</div>
-						<div className="col-span-1 p-8 border border-myborder rounded-2xl
-						 h-full group/box-body relative lg:col-span-1 text-left">
+						<div className="col-span-3 md:col-span-2 lg:col-span-1 p-8 border border-myborder rounded-2xl
+						 h-full group/box-body relative text-left">
 							<h1 className="text-xl font-medium">Uptime</h1>
 							<h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
-							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-indigo-400 from-50% to-blue-500 bg-clip-text text-transparent text-center">{">"}<Counter value={99} /><span className="text-3xl">%</span></h1>
+							<h1 className="text-9xl bg-gradient-to-tr from-mybg via-indigo-400 from-50% to-blue-500 bg-clip-text text-transparent text-right md:text-right lg:text-center">{">"}<Counter value={99} /><span className="text-3xl">%</span></h1>
 						</div>
-						<EvervaultCard className="col-span-1 border border-myborder rounded-2xl text-left h-[90%]">
+						<EvervaultCard className="col-span-3 md:col-span-1 lg:col-span-1 border border-myborder rounded-2xl text-left h-64 md:h-full lg:h-[90%]">
 							<h1 className="text-xl font-medium flex items-center">
 								<svg className="w-6 h-6 mr-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -348,7 +347,7 @@ export default function Home() {
 								End-to-end encryption keeps your data safe we dont touch your data at all.
 							</p>
 						</EvervaultCard>
-						<Link href="/pricing" className="col-span-2 border border-myborder rounded-2xl text-left h-[90%] p-8">
+						<Link href="/pricing" className="col-span-3 lg:col-span-2 border border-myborder rounded-2xl text-left h-full lg:h-[90%] p-8">
 							<h1 className="text-xl font-medium">Scalable Pricing</h1>
 							<h1 className="text-lg text-neutral-500 mt-2">
 								Start free, then only pay for what you use with duration based metered shared pricing plan, or
@@ -378,14 +377,14 @@ export default function Home() {
 				/>
 				<div className="text-center w-full h-fit py-12">
 					<h1 className="text-8xl tracking-tight">Use cases</h1>
-					<p className="text-gray-500 w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
+					<p className="text-gray-500 w-10/12 md:w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
 					<Savage />
 				</div>
 				{/* <img className="mt-12 -mb-96 w-2/3 m-auto" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/8a1e36ce-d735-4b36-acce-7dc40558618d/Default_an_abstract_gradient_pyramid_like_object_in_complete_d_3.jpg" /> */}
 				{/* <img className="mt-12 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg"/> */}
 				{/* <Pricing/> */}
-				<div className="w-[96%] m-auto rounded-[6rem] h-screen bg-fancy flex flex-col items-center justify-center">
-					<h1 className="text-7xl w-2/3 text-center tracking-tight">
+				<div className="w-[96%] m-auto rounded-b-[2.9rem] md:rounded-b-[3.5rem] lg:rounded-b-[5rem] h-screen bg-fancy flex flex-col items-center justify-center">
+					<h1 className="text-[3rem] leading-[1] md:text-6xl text-7xl w-2/3 text-center tracking-tight">
 						Your data stays fresh & dynamic with ignition.
 					</h1>
 					<Button className="mt-12">Try for free</Button>
