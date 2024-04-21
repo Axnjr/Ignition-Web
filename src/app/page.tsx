@@ -149,7 +149,7 @@ export default function Home() {
 				<Nav />
 				<Menu />
 				<main className="flex flex-col items-start justify-center py-28 h-full w-full
-				bg-fancy  rounded-b-[5rem]">
+				bg-fancy rounded-b-[2.9rem] md:rounded-b-[3.5rem] lg:rounded-b-[5rem]">
 					<div className="min-[1024px]:w-3/4 min-[1024px]:m-auto pt-24 h-full flex flex-col
 							items-center justify-center inset-0 w-full bg-transparent gap-2">
 						<div className="bg-white/10 py-1 text-sm text-neutral-300 backdrop-blur-sm rounded-3xl px-3 z-0">
@@ -164,12 +164,12 @@ export default function Home() {
 							We handle all the complexity of the real time infrastructure, so that you get real time for real cheap & real quick!
 						</span>
 						<br />
-						{/* <Button varient="filled" className="z-10" text="Start Free" /> */}
+						<Button className="z-10">Try for free</Button>
 					</div>
 				</main>
 
 				<div className="h-fit w-full text-center py-24">
-					<h1 className="text-4xl mt-20 mb-10 tracking-tight">Easy solutions to complex engineering problems</h1>
+					<h1 className="text-2xl sm:text-4xl mt-20 mb-10 tracking-tight px-8 sm:px-14">Easy solutions to complex engineering problems</h1>
 					<Tabs defaultValue="sync">
 						<TabsList className="flex justify-center gap-2 rounded-full w-fit m-auto
 						bg-white text-black">
@@ -184,14 +184,14 @@ export default function Home() {
 							</TabsTrigger>
 						</TabsList>
 						<section className="mt-24 w-[96%] mx-auto h-fit
-							rounded-t-[5rem] px-10 py-28 bg-fancyflip">
+							rounded-t-[2.9rem] md:rounded-t-[3.5rem] lg:rounded-t-[5rem] px-10 py-28 bg-fancyflip">
 							<TabsContent value="sync" className="flex items-center justify-center  flex-col">
-								<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
-									<h1 className="text-6xl tracking-tight">
+								<div className="flex flex-col items-start sm:items-center justify-center h-[40vh] md:h-[55vh] md:w-2/3 ">
+									<h1 className="text-5xl lg:text-6xl tracking-tight text-left sm:text-center">
 										Sync peice of data across millions of devices
 									</h1>
 									<br />
-									<p className="text-lg">
+									<p className="text-left sm:text-center text-lg">
 										Synconized music, screens, analytics, cursors, collbarating tools
 									</p>
 									<br />
@@ -200,10 +200,10 @@ export default function Home() {
 										<Button variant="outline">Check examples</Button>
 									</div>
 								</div>
-								<div className="w-8/12 h-[55vh] mt-12">
+								<div className="w-full sm:w-11/12 lg:w-8/12 h-[55vh] mt-12">
 									<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
 										{({ className, style, tokens, getLineProps, getTokenProps }) => (
-											<pre className="py-6 px-8 rounded-xl text-left" style={style}>
+											<pre className="py-4 px-2 rounded-xl text-left overflow-x-scroll" style={style}>
 												{tokens.map((line, i) => (
 													<div key={i} {...getLineProps({ line })}>
 														<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
