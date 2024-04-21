@@ -49,7 +49,7 @@ module.exports = {
       colors:{
         // 'mybg':"#393BB2",
         "mybg":"#4d28b6",
-        'mybg2':"rgb(80,80,80)",
+        'mybg2':"rgb(70,70,70)",
         'col':"black",
         'myborder':'rgb(38, 38, 38)'
       },
