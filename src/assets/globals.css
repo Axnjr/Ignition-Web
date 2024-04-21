@@ -103,7 +103,7 @@ body {
 
 
 .section-header-badge:after {
-  background: linear-gradient(90.01deg, rgba(198, 66, 245, 0.24) .01%, rgb(186, 156, 255) 50.01%, rgba(156, 178, 255, .24) 100%);
+  background: linear-gradient(90.01deg, rgba(198, 66, 245, 0.24) .01%, #4d28b6 50.01%, rgba(156, 178, 255, .24) 100%);
   border-radius: inherit;
   content: "";
   inset: 0;
@@ -118,7 +118,7 @@ body {
 }
 
 .section-header-badge div {
-  background: linear-gradient(0deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), linear-gradient(90.01deg, #e59cff .01%, #ba9cff 50.01%, #9cb2ff 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), linear-gradient(90.01deg, #e59cff .01%, #4d28b6 50.01%, #9cb2ff 100%);
     background-blend-mode: normal, screen;
     -webkit-background-clip: text;
     background-clip: text;
