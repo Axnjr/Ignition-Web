@@ -18,6 +18,7 @@ import Savage from "../../components/home/Savage";
 import { EvervaultCard } from "../../components/ui/evervault-card";
 import Link from "next/link";
 import Pricing from "../../components/home/Pricing";
+import Footer from "../../components/home/Footer";
 
 const codeBlock = `import { useSync } from "@ignition/react";
 
@@ -182,41 +183,105 @@ export default function Home() {
 								Notify
 							</TabsTrigger>
 						</TabsList>
-						<TabsContent value="sync" className="flex items-center justify-center mt-24 w-11/12 mx-auto h-fit
-						rounded-t-[5rem] px-10 py-28 bg-fancyflip flex-col">
-							<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
-								<h1 className="text-6xl font-">
-									Sync peice of data across millions of devices
-								</h1>
-								<br />
-								<p className="text-lg">
-									Synconized music, screens, analytics, cursors, collbarating tools
-								</p>
-								<br />
-								<div className="flex items-center gap-2">
-									<Button>Read Docs</Button>
-									<Button variant="outline">Check examples</Button>
+						<section className="mt-24 w-[96%] mx-auto h-fit
+							rounded-t-[5rem] px-10 py-28 bg-fancyflip">
+							<TabsContent value="sync" className="flex items-center justify-center  flex-col">
+								<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
+									<h1 className="text-6xl tracking-tight">
+										Sync peice of data across millions of devices
+									</h1>
+									<br />
+									<p className="text-lg">
+										Synconized music, screens, analytics, cursors, collbarating tools
+									</p>
+									<br />
+									<div className="flex items-center gap-2">
+										<Button>Read Docs</Button>
+										<Button variant="outline">Check examples</Button>
+									</div>
 								</div>
-							</div>
-							<div className="w-8/12 h-[55vh] mt-12">
-								<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
-									{({ className, style, tokens, getLineProps, getTokenProps }) => (
-										<pre className="py-6 px-8 rounded-xl text-left" style={style}>
-											{tokens.map((line, i) => (
-												<div key={i} {...getLineProps({ line })}>
-													<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
-													{line.map((token, key) => (
-														<span key={key} {...getTokenProps({ token })} />
-													))}
-												</div>
-											))}
-										</pre>
-									)}
-								</Highlight>
-							</div>
-
-						</TabsContent>
-
+								<div className="w-8/12 h-[55vh] mt-12">
+									<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
+										{({ className, style, tokens, getLineProps, getTokenProps }) => (
+											<pre className="py-6 px-8 rounded-xl text-left" style={style}>
+												{tokens.map((line, i) => (
+													<div key={i} {...getLineProps({ line })}>
+														<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
+														{line.map((token, key) => (
+															<span key={key} {...getTokenProps({ token })} />
+														))}
+													</div>
+												))}
+											</pre>
+										)}
+									</Highlight>
+								</div>
+							</TabsContent>
+							<TabsContent value="stream" className="flex items-center justify-center  flex-col">
+								<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
+									<h1 className="text-6xl tracking-tight">
+										Stream large data in real time
+									</h1>
+									<br />
+									<p className="text-lg">
+										Chat apps, file sharing, AI output streaming, dashboard analytics, etc.
+									</p>
+									<br />
+									<div className="flex items-center gap-2">
+										<Button>Read Docs</Button>
+										<Button variant="outline">Check examples</Button>
+									</div>
+								</div>
+								<div className="w-8/12 h-[55vh] mt-12">
+									<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
+										{({ className, style, tokens, getLineProps, getTokenProps }) => (
+											<pre className="py-6 px-8 rounded-xl text-left" style={style}>
+												{tokens.map((line, i) => (
+													<div key={i} {...getLineProps({ line })}>
+														<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
+														{line.map((token, key) => (
+															<span key={key} {...getTokenProps({ token })} />
+														))}
+													</div>
+												))}
+											</pre>
+										)}
+									</Highlight>
+								</div>
+							</TabsContent>
+							<TabsContent value="notify" className="flex items-center justify-center  flex-col">
+							<div className="flex flex-col items-center justify-center h-[55vh] w-2/3 ">
+									<h1 className="text-6xl tracking-tight">
+										Deliver notifications to devices on specific events
+									</h1>
+									<br />
+									<p className="text-lg">
+										In app updates, 
+									</p>
+									<br />
+									<div className="flex items-center gap-2">
+										<Button>Read Docs</Button>
+										<Button variant="outline">Check examples</Button>
+									</div>
+								</div>
+								<div className="w-8/12 h-[55vh] mt-12">
+									<Highlight theme={{ ...theme }} code={codeBlock} language="tsx" >
+										{({ className, style, tokens, getLineProps, getTokenProps }) => (
+											<pre className="py-6 px-8 rounded-xl text-left" style={style}>
+												{tokens.map((line, i) => (
+													<div key={i} {...getLineProps({ line })}>
+														<span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
+														{line.map((token, key) => (
+															<span key={key} {...getTokenProps({ token })} />
+														))}
+													</div>
+												))}
+											</pre>
+										)}
+									</Highlight>
+								</div>
+							</TabsContent>
+						</section>
 					</Tabs>
 				</div>
 
@@ -237,16 +302,16 @@ export default function Home() {
 						 h-full group/box-body relative lg:col-span-2 text-center lg:text-left ">
 							<h1 className="text-xl font-medium">Mean latency</h1>
 							<h1 className="text-mybg2 font-medium mt-3 leading-[1.4]">
-								Milliseconds Matter, Get the Speed You Need. Don't let slow updates and lagging 
-								notifications hold your users back. 
+								Milliseconds Matter, Get the Speed You Need. Don't let slow updates and lagging
+								notifications hold your users back.
 							</h1>
 							<div className="flex items-center gap-2">
 								<div>
 									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
 										{
-											[...Array(20).keys()].map((_,id) => <div key={id}
+											[...Array(20).keys()].map((_, id) => <div key={id}
 												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
-													<div style={{height: Math.floor(Math.random() * 10)+10+"%"}} className="w-full rounded-2xl bg-mybg"></div>
+												<div style={{ height: Math.floor(Math.random() * 10) + 10 + "%" }} className="w-full rounded-2xl bg-mybg"></div>
 											</div>)
 										}
 									</div>
@@ -255,16 +320,16 @@ export default function Home() {
 								<div>
 									<div className="flex items-center w-full h-20 gap-2 my-2 border border-myborder rounded-lg p-2">
 										{
-											[...Array(20).keys()].map((_,id) => <div key={id}
+											[...Array(20).keys()].map((_, id) => <div key={id}
 												className="w-2 h-full rounded-2xl bg-white/10 flex flex-col justify-end">
-													<div style={{height: (Math.floor(Math.random() * 120)+100)/2.6+"%"}} className="w-full rounded-2xl bg-mybg"></div>
+												<div style={{ height: (Math.floor(Math.random() * 120) + 100) / 2.6 + "%" }} className="w-full rounded-2xl bg-mybg"></div>
 											</div>)
 										}
 									</div>
 									<label className="text-xl">Shared Plan 145ms</label>
 								</div>
 							</div>
-							
+
 						</div>
 						<div className="col-span-1 p-8 border border-myborder rounded-2xl
 						 h-full group/box-body relative lg:col-span-1 text-left">
@@ -286,34 +351,46 @@ export default function Home() {
 						<Link href="/pricing" className="col-span-2 border border-myborder rounded-2xl text-left h-[90%] p-8">
 							<h1 className="text-xl font-medium">Scalable Pricing</h1>
 							<h1 className="text-lg text-neutral-500 mt-2">
-								Start free, then only pay for what you use with duration based metered shared pricing plan, or 
+								Start free, then only pay for what you use with duration based metered shared pricing plan, or
 								take complete control and use without any limitations with our dedicated & enterprize plans.
 							</h1>
 							<div className="flex items-center justify-around mt-10">
 								<div className="rounded-lg border border-myborder p-4 w-44">
-									<span className="text-base text-mybg2">Clients</span>
-									<h1 className="text-3xl text-mybg">100</h1>
+									<span className="text-base text-zinc-200">Clients</span>
+									<h1 className="text-4xl text-mybg">100</h1>
 								</div>
 								<div className="rounded-lg border border-myborder p-4 w-44">
-									<span className="text-base text-mybg2">Duration</span>
-									<h1 className="text-3xl text-mybg">1hour</h1>
+									<span className="text-base text-zinc-200">Duration</span>
+									<h1 className="text-4xl text-mybg">1hour</h1>
 								</div>
 								<div className="rounded-lg border border-myborder p-4 w-44">
-									<span className="text-base text-mybg2">Cost</span>
-									<h1 className="text-3xl text-green-500">0.05$</h1>
+									<span className="text-base text-zinc-200">Cost</span>
+									<h1 className="text-4xl text-green-500">0.05$</h1>
 								</div>
 							</div>
 						</Link>
 					</section>
 				</div>
-				<img className="-mt-32 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" />
+				<img className=" h-96 -mt-12 -mb-32 m-auto w-2/3"
+					src="/sparkle.jpg"
+				// src="https://reflect.app/home/build/q-44e26a19.png"
+				// src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" 
+				/>
 				<div className="text-center w-full h-fit py-12">
 					<h1 className="text-8xl tracking-tight">Use cases</h1>
 					<p className="text-gray-500 w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
 					<Savage />
 				</div>
-				<img className="rotate-180 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" />
-				<Pricing/>
+				{/* <img className="mt-12 -mb-96 w-2/3 m-auto" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/8a1e36ce-d735-4b36-acce-7dc40558618d/Default_an_abstract_gradient_pyramid_like_object_in_complete_d_3.jpg" /> */}
+				{/* <img className="mt-12 w-full m-auto h-96" src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg"/> */}
+				{/* <Pricing/> */}
+				<div className="w-[96%] m-auto rounded-[6rem] h-screen bg-fancy flex flex-col items-center justify-center">
+					<h1 className="text-7xl w-2/3 text-center tracking-tight">
+						Your data stays fresh & dynamic with ignition.
+					</h1>
+					<Button className="mt-12">Try for free</Button>
+				</div>
+				<Footer />
 			</div>
 		</>
 	)
