@@ -55,7 +55,8 @@ module.exports = {
       },
       backgroundImage:{
         "fancy":"radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);",
-        "fancyflip":"radial-gradient(131.82% 109.9% at 50% 100%, transparent 37.41%, #63e 69.27%, #fff 100%)"
+        "fancyflip":"radial-gradient(131.82% 109.9% at 50% 100%, transparent 37.41%, #63e 69.27%, #fff 100%)",
+        "fancyflipdark":"radial-gradient(131.82% 109.9% at 50% 100%, transparent 47.41%,rgb(102, 51, 238, 0.7) 95%, #000 100%)"
       }
     },
   },
