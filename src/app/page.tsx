@@ -1,5 +1,4 @@
 "use client";
-
 import Nav from "../../components/home/Nav"
 import { Button } from "../../components/ui/Button"
 import { useSession, signIn, signOut } from "next-auth/react"
@@ -43,7 +42,7 @@ export default function Home() {
 				<Savage />
 			</div>
 			<div className="w-[96%] m-auto rounded-b-[2.9rem] md:rounded-b-[3.5rem] lg:rounded-b-[5rem] h-screen bg-fancy flex flex-col items-center justify-center">
-				<h1 className="text-[3rem] leading-[1] md:text-6xl text-7xl w-2/3 text-center tracking-tight">
+				<h1 className="text-[3rem] leading-[1] md:text-6xl text-7xl w-11/12 sm:w-2/3 text-center tracking-tight">
 					Your data stays fresh & dynamic with ignition.
 				</h1>
 				<Button className="mt-12">Try for free</Button>
