@@ -1,5 +1,3 @@
-
-
 export default function Footer() {
     return (
         <footer className="min-h-[80vh] md:min-h-[60vh] bg-black relative flex flex-col items-start md:items-start pt-24 
