@@ -17,8 +17,8 @@ export default function Features() {
                     Reliable and rediculously fast infrastructure, powered by Rust.
                 </h1>
             </div>
-            <section className="grid w-full lg:w-11/12 m-auto mt-14 h-fit grid-cols-3 px-8 py-4 gap-2">
-                <div className="p-8 border border-myborder rounded-2xl h-full group/box-body relative col-span-3 lg:col-span-2 text-left ">
+            <section className="grid w-full lg:w-11/12 m-auto mt-14 h-fit grid-cols-3 px-5 sm:px-8 py-4 gap-2">
+                <div className="p-6 sm:p-8 border border-myborder rounded-2xl h-full group/box-body relative col-span-3 lg:col-span-2 text-left ">
                     <h1 className="text-xl font-medium">Mean latency</h1>
                     <h1 className="text-mybg2 font-medium mt-3 leading-[1.4]">
                         Milliseconds Matter, Get the Speed You Need. Don't let slow updates and lagging
@@ -50,7 +50,7 @@ export default function Features() {
                     </div>
 
                 </div>
-                <div className="col-span-3 md:col-span-2 lg:col-span-1 p-8 border border-myborder rounded-2xl
+                <div className="col-span-3 md:col-span-2 lg:col-span-1 p-5 sm:p-8 border border-myborder rounded-2xl
 						 h-full group/box-body relative text-left">
                     <h1 className="text-xl font-medium">Uptime</h1>
                     <h1 className="text-xl text-neutral-500">robust reliable infrastructure</h1>
@@ -69,24 +69,24 @@ export default function Features() {
                         End-to-end encryption keeps your data safe we dont touch your data at all.
                     </p>
                 </EvervaultCard>
-                <Link href="/pricing" className="col-span-3 lg:col-span-2 border border-myborder rounded-2xl text-left h-full lg:h-[90%] p-8">
-                    <h1 className="text-xl font-medium">Scalable Pricing</h1>
-                    <h1 className="text-lg text-neutral-500 mt-2">
+                <Link href="/pricing" className="col-span-3 lg:col-span-2 border border-myborder rounded-2xl text-left h-full lg:h-[90%] py-6 sm:py-8">
+                    <h1 className="text-xl font-medium px-5 sm:px-8">Scalable Pricing</h1>
+                    <h1 className="text-lg text-neutral-500 mt-2 px-5 sm:px-8">
                         Start free, then only pay for what you use with duration based metered shared pricing plan, or
                         take complete control and use without any limitations with our dedicated & enterprize plans.
                     </h1>
-                    <div className="flex items-center justify-around mt-10">
-                        <div className="rounded-lg border border-myborder p-4 w-44">
+                    <div className="flex items-center justify-around mt-10 px-4 flex-wrap">
+                        <div className="rounded-xl border border-myborder p-4 sm:w-44">
                             <span className="text-base text-zinc-200">Clients</span>
-                            <h1 className="text-4xl text-mybg">100</h1>
+                            <h1 className="text-2xl sm:text-4xl text-mybg">100</h1>
                         </div>
-                        <div className="rounded-lg border border-myborder p-4 w-44">
+                        <div className="rounded-xl border border-myborder p-4 sm:w-44">
                             <span className="text-base text-zinc-200">Duration</span>
-                            <h1 className="text-4xl text-mybg">1hour</h1>
+                            <h1 className="text-2xl sm:text-4xl text-mybg">1hour</h1>
                         </div>
-                        <div className="rounded-lg border border-myborder p-4 w-44">
+                        <div className="rounded-xl border border-myborder p-4 sm:w-44">
                             <span className="text-base text-zinc-200">Cost</span>
-                            <h1 className="text-4xl text-green-500">0.05$</h1>
+                            <h1 className="text-2xl sm:text-4xl text-green-500">0.05$</h1>
                         </div>
                     </div>
                 </Link>

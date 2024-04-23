@@ -28,12 +28,13 @@ export default function Footer() {
                 </ul>
 
             </div>
-            <div className="w-full text-neutral-300 border-neutral-800 py-4 
-            border-t flex items-center justify-between px-4">
+            <div className="w-full text-neutral-300 border-neutral-800 py-4
+            border-t flex items-center justify-between px-2 sm:px-4">
                 <p className="text-xs md:text-sm">
                     © 2024 Ignition Inc. All rights reserved.
                 </p>
-                <a className="text-xs md:text-sm hover:text-green-500 hover:bg-green-500/20 rounded-lg md:p-2"><span className="text-xs text-green-500 mr-2">●</span> All systems operational</a>
+                <a className="text-xs md:text-sm hover:text-green-500 hover:bg-green-500/20 rounded-lg md:p-2">
+                    <span className="text-xs text-green-500 sm:mr-2">●</span> All systems operational</a>
             </div>
         </footer>
     )
