@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { EC2Client, RunInstancesCommand, DescribeAccountAttributesCommand } from "@aws-sdk/client-ec2";
+import { EC2Client, RunInstancesCommand } from "@aws-sdk/client-ec2";
 
 export async function GET(req: NextRequest) {
 
@@ -48,8 +48,8 @@ sudo docker run -e VALIDATION_TOKEN=${key as string} -p 3000:3000 axnjr/ignition
     });
 
     const command = new RunInstancesCommand({
-        ImageId:"ami-06041499d7ab7c387",//"ami-06041499d7ab7c387", 
-        InstanceType:"t2.micro",
+        ImageId:"ami-001843b876406202a",//"ami-06041499d7ab7c387", 
+        InstanceType:"t4g.micro",
         MinCount:1,
         MaxCount:1,
         KeyName:"WSSSharedClusterECS",
