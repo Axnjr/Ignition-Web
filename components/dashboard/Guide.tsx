@@ -1,49 +1,10 @@
 "use client";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/Tabs'
 import { pubSdkCodes, subSdkCodes } from '../home/codes'
+import { Highlight } from "prism-react-renderer"
 import { useState } from 'react'
-import Button from '../home/Button';
-import { Code } from '@geist-ui/react';
-
-function getTokenStyle(token: string) {
-    switch (token) {
-        case "import":
-        case "from":
-        case "as":
-        case "use":
-        case "import ":
-        case "main":
-            return "text-sky-500"
-        ;
-
-        case "(":
-        case ")":
-        case "=":   
-        case "{":
-        case "}":
-        case ';':
-            return "text-[#ff6b6b]"
-                ;
-
-        case "new":
-        case " const ":
-        case 'Ignition("':
-        case "ignition_sdk::Ignition;":
-        case '"ignition_sdk"; ':
-        case "package":
-            return "text-[#ffe45f]"
-                ;
-
-        case "Ignition":
-            return "text-[#1af1a]"
-                ;
-
-
-
-        default:
-            return "text-neutral-400";
-    }
-}
+import { Button } from '../ui/Button';
+import { theme } from '../constants';
 
 const sdks = [
     "javascript",
@@ -71,33 +32,41 @@ export default function Guide() {
                         <TabsTrigger value="java">Java</TabsTrigger>
                         <TabsTrigger value="bash">No SDK</TabsTrigger>
                     </div>
-
                     <div>
-                        <Button onClick={() => setSdk("pub")} varient={sdk == "pub" ? "filled" : "normal"} text='Publish'/>
-                        <Button onClick={() => setSdk("sub")} varient={sdk == "sub" ? "filled" : "normal"} text='Subscribe' />
+                        <Button className='rounded-lg mx-1' variant={sdk == "pub" ? "default2" : "ghost"} onClick={() => setSdk("pub")}>Publish</Button>
+                        <Button className='rounded-lg mx-1' variant={sdk == "sub" ? "default2" : "ghost"} onClick={() => setSdk("sub")}>Subscribe</Button>
                     </div>
                 </TabsList>
-
                 {
-                    sdks.map((lang,id) => { 
-                        return <TabsContent key={id} className='font-mono font-thin' value={lang}>
-                            <pre className=' px-6 py-4 rounded-xl border dark:border-neutral-800'>
-                                <code>{
-                                sdk == "pub" ? pubSdkCodes.get(lang)!.split(" ").map((word, i) => {
-                                    return <span key={i} >{word} </span>
-                                })
-                                    :
-                                subSdkCodes.get(lang)!.split(" ").map((word, i) => {
-                                    return <span key={i} >{word} </span>
-                                })
-                                }</code>
-                            </pre>
-                        </TabsContent> 
+                    sdks.map((lang, id) => {
+                        return <>
+                            <TabsContent key={id} value={lang}>
+                                <Highlight theme={{
+                                    plain: {
+                                        color: "#fff",
+                                        backgroundColor: "#000",
+                                    }, ...theme
+                                }} code={sdk == "pub" ? pubSdkCodes?.get(lang) as string : subSdkCodes.get(lang) as string} language={lang} >
+                                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                                        <pre className="py-4 px-2 rounded-xl text-left overflow-x-scroll" style={style}>
+                                            {tokens.map((line, i) => (
+                                                <div key={i} {...getLineProps({ line })}>
+                                                    <span className="text-neutral-600 ml-1 mr-4">{i + 1}</span>
+                                                    {line.map((token, key) => (
+                                                        <span key={key} {...getTokenProps({ token })} />
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </pre>
+                                    )}
+                                </Highlight>
+                            </TabsContent>
+                        </>
                     })
                 }
             </Tabs>
 
-           
+
 
         </section>
     )
