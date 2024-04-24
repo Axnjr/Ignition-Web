@@ -67,10 +67,6 @@ export default function MyComp() {
 }`
 
 export const theme = {
-	plain: {
-		color: "#fff",
-		backgroundColor: "#1111124c",
-	},
 	styles: [
 		{
 			types: ["prolog"],
