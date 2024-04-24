@@ -39,7 +39,12 @@ export default function Products() {
                             </div>
                         </div>
                         <div className="w-full sm:w-11/12 lg:w-8/12 h-[55vh] mt-24 sm:mt-12 px-6">
-                            <Highlight theme={{ ...theme }} code={syncCodeBlock} language="tsx" >
+                            <Highlight theme={{
+                                plain: {
+                                    color: "#fff",
+                                    backgroundColor: "#1111124c",
+                                }, ...theme
+                            }} code={syncCodeBlock} language="tsx" >
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                     <pre className="py-4 px-2 rounded-xl text-left overflow-x-scroll" style={style}>
                                         {tokens.map((line, i) => (
@@ -71,7 +76,12 @@ export default function Products() {
                             </div>
                         </div>
                         <div className="w-8/12 h-[55vh] mt-12">
-                            <Highlight theme={{ ...theme }} code={syncCodeBlock} language="tsx" >
+                            <Highlight theme={{
+                                plain: {
+                                    color: "#fff",
+                                    backgroundColor: "#1111124c",
+                                }, ...theme
+                            }} code={syncCodeBlock} language="tsx" >
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                     <pre className="py-6 px-8 rounded-xl text-left" style={style}>
                                         {tokens.map((line, i) => (
@@ -103,7 +113,12 @@ export default function Products() {
                             </div>
                         </div>
                         <div className="w-8/12 h-[55vh] mt-12">
-                            <Highlight theme={{ ...theme }} code={syncCodeBlock} language="tsx" >
+                            <Highlight theme={{
+                                plain: {
+                                    color: "#fff",
+                                    backgroundColor: "#1111124c",
+                                }, ...theme
+                            }} code={syncCodeBlock} language="tsx" >
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                     <pre className="py-6 px-8 rounded-xl text-left" style={style}>
                                         {tokens.map((line, i) => (
