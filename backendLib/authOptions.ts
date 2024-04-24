@@ -8,8 +8,8 @@ import db from './db2'
 
 export const authOptions: NextAuthOptions = {
 	secret: process.env.NEXTAUTH_SECRET,
-  	// adapter: PrismaAdapter(prismaDB),
-	// session: { strategy: 'jwt' },
+  	adapter: PrismaAdapter(prismaDB),
+	session: { strategy: 'jwt' },
 
     providers: [
       GoogleProvider({
@@ -22,42 +22,42 @@ export const authOptions: NextAuthOptions = {
 	  })
     ],
 
-	// callbacks:{
-	// 	redirect() {
-	// 		return "/overview"
-	// 	},
+	callbacks:{
+		redirect() {
+			return "/overview"
+		},
 
-	// 	async session({ session, token: user }) {
-	// 		// session.user!.id = user.id
-	// 		// session.user!.name = user.name
-	// 		// session.user!.email = user.email
-	// 		// session.user!.image = user.picture
-	// 		return {...session, dbPayload: user, type: (user as User).planType};
-	// 	},
+		async session({ session, token: user }) {
+			// session.user!.id = user.id
+			// session.user!.name = user.name
+			// session.user!.email = user.email
+			// session.user!.image = user.picture
+			return {...session, dbPayload: user, type: (user as User).planType};
+		},
 
-	// 	async signIn(props) {
-	// 		try {
-	// 			const u = await db.query("SELECT * FROM userdetails WHERE email = $1 LIMIT 1", [props.user.email as string])
+		async signIn(props) {
+			try {
+				const u = await db.query("SELECT * FROM userdetails WHERE email = $1 LIMIT 1", [props.user.email as string])
 
-	// 			if(u.rows.length > 0){
-	// 				return true;
-	// 			}
+				if(u.rows.length > 0){
+					return true;
+				}
 
-	// 			else {
-	// 				await db.query(`
-	// 					INSERT INTO userdetails (plantype, apikey, expiryon, hits, email) 
-	// 					VALUES ('Hobby', $1, NULL, 0, $2) ;
-	// 				`,
-	// 				[props.user.id as string, props.user.email as string])
-	// 			}
+				else {
+					await db.query(`
+						INSERT INTO userdetails (plantype, apikey, expiryon, hits, email) 
+						VALUES ('Hobby', $1, NULL, 0, $2) ;
+					`,
+					[props.user.id as string, props.user.email as string])
+				}
 
-	// 		} catch (error) {
-	// 			console.log("ERROR AT `signIn` Callback : ", error)
-	// 		}
-	// 		return true;
-	// 	}
+			} catch (error) {
+				console.log("ERROR AT `signIn` Callback : ", error)
+			}
+			return true;
+		}
 
-	// }
+	}
 }
 
 export const getAuthSession = () => getServerSession(authOptions) // to get data all around the app .
