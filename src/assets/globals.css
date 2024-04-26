@@ -18,6 +18,10 @@
   background-color: transparent;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Radha";
   margin: 0%;
