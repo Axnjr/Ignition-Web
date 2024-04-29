@@ -6,11 +6,11 @@ import { Button } from '../ui/Button';
 
 export default function Products() {
     return (
-        <div className="h-fit w-full text-center py-24">
+        <div id='products' className="h-fit w-full text-center py-24">
             <h1 className="text-2xl sm:text-4xl mt-20 mb-10 tracking-tight px-14">Easy solutions to complex engineering problems</h1>
             <Tabs defaultValue="sync">
                 <TabsList className="flex justify-center gap-2 rounded-full w-fit m-auto
-            bg-white text-black">
+                bg-white text-black">
                     <TabsTrigger className="text-xl font-medium" value="sync">
                         Sync
                     </TabsTrigger>
