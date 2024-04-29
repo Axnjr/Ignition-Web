@@ -1,6 +1,7 @@
 import AllProvider from '@/providers/AuthProvider'
 import type { Metadata } from 'next'
 import "../assets/globals.css"
+import Nav from '../../components/home/Nav'
 
 export const metadata: Metadata = {
 	title: 'Ignition - Ultimate real time platform',
@@ -16,6 +17,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang="en">
 			<AllProvider>
 				<body>
+					<Nav/>
 					{children}
 				</body>
 			</AllProvider>

@@ -1,17 +1,13 @@
 "use client";
-import Nav from "../../components/home/Nav"
 import { Button } from "../../components/ui/Button"
-import { useSession, signIn, signOut } from "next-auth/react"
 import Savage from "../../components/home/Savage";
 import Footer from "../../components/home/Footer";
 import Products from "../../components/home/Products";
 import Features from "../../components/home/Features";
 
 export default function Home() {
-	const { data: session, status } = useSession()
 	return (
-		<div className="text-white bg-gradient-to-b from-gray-950 to-black relative">
-			<Nav status={status} signIn={signIn} signOut={signOut} />
+		<div className="text-white bg-gradient-to-b from-gray-950 to-[#050412] relative">
 			<main className="flex flex-col items-start justify-center py-28 h-full w-full
 					bg-fancy rounded-b-[2.9rem] md:rounded-b-[3.5rem] lg:rounded-b-[5rem]">
 				<div className="min-[1024px]:w-3/4 min-[1024px]:m-auto pt-24 h-full flex flex-col
@@ -36,7 +32,7 @@ export default function Home() {
 			<img className="h-96 -mt-12 -mb-32 m-auto w-2/3"
 				src="/sparkle.jpg" // src="https://cdn.leonardo.ai/users/5ebbac92-79d5-4e98-b3d7-f0754f6153a0/generations/3796deb0-d91b-43c8-93ab-d23911601608/Default_an_abstract_inverted_gradient_circle_in_complete_darkn_2.jpg" 
 			/>
-			<div className="text-center w-full h-fit py-12">
+			<div id="usecases" className="text-center w-full h-fit py-12">
 				<h1 className="text-8xl tracking-tight">Use cases</h1>
 				<p className="text-gray-500 w-10/12 md:w-1/2 m-auto my-3 text-lg">Whatever your usecase be Ignition can help you improve your user expirence and customer satisfaction with easy integrations and flexible pricing.</p>
 				<Savage />
