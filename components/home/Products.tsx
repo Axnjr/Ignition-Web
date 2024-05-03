@@ -12,7 +12,7 @@ export default function Products() {
                 <TabsList className="flex justify-center gap-2 rounded-full w-fit m-auto
                 bg-white text-black">
                     <TabsTrigger className="text-xl font-medium" value="sync">
-                        Sync
+                        Pubsu
                     </TabsTrigger>
                     <TabsTrigger className="text-xl font-medium" value="stream">
                         Stream
